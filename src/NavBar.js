@@ -7,7 +7,10 @@ Button,
 Menu,
 MenuItem,
 Typography,
-IconButton} from '@mui/material';
+IconButton,
+Accordion,
+AccordionSummary,
+AccordionDetails} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
@@ -39,6 +42,13 @@ function NavBar(){
         setAnchorElNav(null);
     }
 
+    // Category Accordion 
+    const [expanded, setExpanded] = useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panel : false);
+    };
+
     return(
         <AppBar position="static">
             <Container>
@@ -55,6 +65,7 @@ function NavBar(){
                         >
                             <MenuIcon />
                         </IconButton>
+
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -73,11 +84,26 @@ function NavBar(){
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem>
+                                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                                        <Typography>Categories</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        {categories.map((category) => (
+                                            <MenuItem key={category} onClick={handleCloseCategoryMenu}>
+                                                <Typography textAlign="center">{category}</Typography>
+                                            </MenuItem>
+                                        ))}
+                                    </AccordionDetails>
+                                </Accordion>
+                            </MenuItem>    
+                            <MenuItem key="contactUs" onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">Contact Us</Typography>
+                            </MenuItem>
+                            <MenuItem key="profile" onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">Profile</Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
@@ -111,7 +137,9 @@ function NavBar(){
 
                     <Typography
                         variant="h6"
-                        sx={{flexGrow: 1, display:'flex'}}
+                        sx={{flexGrow: 1, display:'flex',textDecoration: 'none'}}
+                        component="a"
+                        href="/"
                     >
                         Logo
                     </Typography>

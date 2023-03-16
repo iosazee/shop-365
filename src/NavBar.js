@@ -110,7 +110,7 @@ function NavBar(){
                         </Menu>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                         <Button onClick={handleOpenCategoryMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}>
                             Categories
@@ -139,12 +139,21 @@ function NavBar(){
                     </Box>
 
                     <Typography
+                        variant="button"
+                        sx={{flexGrow: 1, display: { xs: 'none', md: 'flex' }}}
+                    >
+                        <Link to="/contact">
+                            Contact Us
+                        </Link>
+                    </Typography>
+
+                    <Typography
                         variant="h6"
                         sx={{flexGrow: 1, display:'flex',textDecoration: 'none'}}
-                        component="a"
-                        href="/"
                     >
-                        Logo
+                        <Link to="/">
+                            Logo
+                        </Link>
                     </Typography>
 
                     <IconButton sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
@@ -154,7 +163,9 @@ function NavBar(){
                     </IconButton>
 
                     <IconButton sx={{flexGrow: 0 }}>
-                        <ShoppingCartIcon />
+                        <Link to="/cart">
+                            <ShoppingCartIcon />
+                        </Link>
                     </IconButton>
                 </Toolbar>
             </Container>

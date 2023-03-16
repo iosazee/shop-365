@@ -98,12 +98,12 @@ function NavBar(){
                             </Accordion> 
 
                             <MenuItem key="contactUs" onClick={handleCloseNavMenu}>
-                                <Link to="/contact">
+                                <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                                     <Typography textAlign="center">Contact Us</Typography>
                                 </Link>
                             </MenuItem>
                             <MenuItem key="profile" onClick={handleCloseNavMenu}>
-                                <Link to="/profile">
+                                <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
                                     <Typography textAlign="center">Profile</Typography>
                                 </Link>
                             </MenuItem>
@@ -142,28 +142,28 @@ function NavBar(){
                         variant="button"
                         sx={{flexGrow: 1, display: { xs: 'none', md: 'flex' }}}
                     >
-                        <Link to="/contact">
+                        <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                             Contact Us
                         </Link>
                     </Typography>
 
                     <Typography
                         variant="h6"
-                        sx={{flexGrow: 1, display:'flex',textDecoration: 'none'}}
+                        sx={{flexGrow: 1, display:'flex'}}
                     >
-                        <Link to="/">
+                        <Link to="/" style={{color: 'inherit', textDecoration: 'none' }}>
                             Logo
                         </Link>
                     </Typography>
 
                     <IconButton sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-                        <Link to="/profile">
+                        <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
                             <AccountIcon/>  
                         </Link>
                     </IconButton>
 
                     <IconButton sx={{flexGrow: 0 }}>
-                        <Link to="/cart">
+                        <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                             <ShoppingCartIcon />
                         </Link>
                     </IconButton>

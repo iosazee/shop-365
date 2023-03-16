@@ -1,4 +1,5 @@
 import {React, useState} from 'react';
+import {Link} from 'react-router-dom';
 import {AppBar,
 Container,
 Toolbar,
@@ -16,7 +17,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
 
 const categories = ["Men's Clothing", "Women's Clothing", "Jewelery", "Electronics"];
-const pages =["Categories", "Contact Us", "Profile"];
 
 function NavBar(){
 
@@ -84,7 +84,6 @@ function NavBar(){
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            
                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                                     <Typography>Categories</Typography>
@@ -97,11 +96,14 @@ function NavBar(){
                                     ))}
                                 </AccordionDetails>
                             </Accordion> 
+
                             <MenuItem key="contactUs" onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Contact Us</Typography>
                             </MenuItem>
                             <MenuItem key="profile" onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Profile</Typography>
+                                <Link to="/contact">
+                                    <Typography textAlign="center">Profile</Typography>
+                                </Link>
                             </MenuItem>
                         </Menu>
                     </Box>

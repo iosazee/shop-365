@@ -6,6 +6,7 @@ import './App.css';
 import ContactUs from './components/ContactUs';
 import Cart from './components/Cart';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
          />
          <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
+      <Footer />
     </section>
   )
 }

@@ -43,12 +43,6 @@ function NavBar(){
         <AppBar position="static">
             <Container>
                 <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        sx={{display: { xs: 'none', md: 'flex' }}}
-                    >
-                        Logo
-                    </Typography>
 
                     <Box sx={{flexGrow: 1, display:{xs:"flex", md:"none"}}}>
                         <IconButton
@@ -115,11 +109,18 @@ function NavBar(){
                         </Menu>
                     </Box>
 
-                    <IconButton sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+                    <Typography
+                        variant="h6"
+                        sx={{flexGrow: 1, display:'flex'}}
+                    >
+                        Logo
+                    </Typography>
+
+                    <IconButton sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                         <AccountIcon/>
                     </IconButton>
 
-                    <IconButton sx={{ flexGrow: 0 }}>
+                    <IconButton sx={{flexGrow: 0 }}>
                         <ShoppingCartIcon />
                     </IconButton>
                 </Toolbar>

@@ -1,0 +1,25 @@
+  const [cartItems, setCartItems] = useState([])
+
+  const addItemToCart = (itemToAdd) => {
+
+    const itemIsInCart = cartItems.find((item) => item.id === itemToAdd.id)
+
+    if (itemIsInCart) {
+      itemIsInCart.count += 1
+
+      const newCartItems = cartItems.map((item) => item.id === itemToAdd.id ? itemIsInCart : item)
+
+      window.localStorage.setItem("cartItems", JSON.stringify(newCartItems))
+      setCartItems(newCartItems)
+    } else {
+      const newCartItems = [
+        ...cartItems,
+        {...itemToAdd, count:1}
+      ]
+      setCartItems(newCartItems)
+      window.localStorage.setItem("cartItems", JSON.stringify(newCartItems))
+    }
+
+  }
+
+  

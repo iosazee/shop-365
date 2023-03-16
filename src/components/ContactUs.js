@@ -35,9 +35,16 @@ const ContactUs = () => {
         if(contactInfo.message.length <= 10) {
             setFormResponseMessage("Please enter in a valid message")
         } else {
-            setFormResponseMessage("You submitted the form successfully.")
+            setFormResponseMessage("Form submitted successfully");
+            setContactInfo({
+                firstName: "",
+                lastName: "",
+                email: "",
+                message: ""
+            })
+
         }
-    } 
+    }
 
     return (
         <section>

@@ -98,10 +98,12 @@ function NavBar(){
                             </Accordion> 
 
                             <MenuItem key="contactUs" onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Contact Us</Typography>
+                                <Link to="/contact">
+                                    <Typography textAlign="center">Contact Us</Typography>
+                                </Link>
                             </MenuItem>
                             <MenuItem key="profile" onClick={handleCloseNavMenu}>
-                                <Link to="/contact">
+                                <Link to="/profile">
                                     <Typography textAlign="center">Profile</Typography>
                                 </Link>
                             </MenuItem>
@@ -146,7 +148,9 @@ function NavBar(){
                     </Typography>
 
                     <IconButton sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
-                        <AccountIcon/>
+                        <Link to="/profile">
+                            <AccountIcon/>  
+                        </Link>
                     </IconButton>
 
                     <IconButton sx={{flexGrow: 0 }}>

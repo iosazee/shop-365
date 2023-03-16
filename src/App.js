@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Container } from '@mui/material'
-import Navbar from './components/Navbar';
-import Products from './components/Products';
+import Products from './components/Products'
 import './App.css';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar />
       <Container maxWidth={'lg'} sx={{my: 4}}>
         <Products products={products} />
       </Container>

@@ -84,20 +84,19 @@ function NavBar(){
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            <MenuItem>
-                                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                                        <Typography>Categories</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        {categories.map((category) => (
-                                            <MenuItem key={category} onClick={handleCloseCategoryMenu}>
-                                                <Typography textAlign="center">{category}</Typography>
-                                            </MenuItem>
-                                        ))}
-                                    </AccordionDetails>
-                                </Accordion>
-                            </MenuItem>    
+                            
+                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                                    <Typography>Categories</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    {categories.map((category) => (
+                                        <MenuItem key={category} onClick={handleCloseCategoryMenu}>
+                                            <Typography textAlign="center">{category}</Typography>
+                                        </MenuItem>
+                                    ))}
+                                </AccordionDetails>
+                            </Accordion> 
                             <MenuItem key="contactUs" onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">Contact Us</Typography>
                             </MenuItem>

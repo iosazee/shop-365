@@ -6,7 +6,9 @@ Box,
 Button,
 Menu,
 MenuItem,
-Typography} from '@mui/material'
+Typography,
+IconButton} from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const categories = ["Men's Clothing", "Women's Clothing", "Jewelery", "Electronics"];
 
@@ -20,12 +22,12 @@ function NavBar(){
 
     const handleCloseCategoryMenu = () => {
         setCategoryMenu(null);
-      };
+    };
 
     return(
         <AppBar>
             <Container>
-                <Toolbar>
+                <Toolbar disableGutters>
                     <Box>
                         <Button onClick={handleOpenCategoryMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}>
@@ -45,7 +47,7 @@ function NavBar(){
                             }}
                             open={Boolean(categoryMenu)}
                             onClose={handleCloseCategoryMenu}
-                            >
+                        >
                             {categories.map((category) => (
                                 <MenuItem key={category} onClick={handleCloseCategoryMenu}>
                                     <Typography textAlign="center">{category}</Typography>
@@ -53,6 +55,15 @@ function NavBar(){
                             ))}
                         </Menu>
                     </Box>
+                    <Typography
+                        variant="h6"
+                        sx={{display: { xs: 'none', md: 'flex' }}}
+                    >
+                        Logo
+                    </Typography>
+                    <IconButton sx={{ flexGrow: 0 }}>
+                        <ShoppingCartIcon />
+                    </IconButton>
                 </Toolbar>
             </Container>
         </AppBar>

@@ -46,7 +46,7 @@ N/A
 
 ## Questions
 
-If you have any questions you can contact us at [these emails](iosazee1@gmail.com), (alex.ainslie99@gmail.com),(Mike@originet.co.uk)
+If you have any questions you can contact us at [Zee](iosazee1@gmail.com), [Alex](alex.ainslie99@gmail.com) and [Mike](Mike@originet.co.uk)
 
 You can see more of my work at [my github's profile](https://github.com/iosazee).
 

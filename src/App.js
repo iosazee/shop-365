@@ -18,6 +18,10 @@ function App() {
       .then(data => setProducts(data))
   }, [])
 
+  // useEffect(() => {
+  //   console.log(products)
+  // }, [products])
+
   const addItemToCart = (itemToAdd) => {
 
     const itemIsInCart = cartItems.find((item) => item.id === itemToAdd.id)
@@ -40,8 +44,13 @@ function App() {
 
   }
 
+  const deleteCartItem = (itemToDelete) => {
 
-  console.log(products)
+    const newCartItems = cartItems.filter(cartItem => cartItem.id !== itemToDelete.id)
+    setCartItems(newCartItems)
+    window.localStorage.setItem("cartItems", JSON.stringify(newCartItems))
+  }
+
 
   return (
     <section className='App'>
@@ -49,7 +58,10 @@ function App() {
         <Route path='/' element={<Products products={products} />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
-        <Route path='/cart' element={<Cart cartItems={cartItems} />} />
+        <Route path='/cart'
+          element={<Cart cartItems={cartItems} deleteCartItem={deleteCartItem} />}
+
+         />
       </Routes>
     </section>
   )

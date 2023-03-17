@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Cart = ({cartItems}) => {
+const Cart = ({cartItems, deleteCartItem}) => {
 
     const [isPopUpOpen, setPopUpOpen] = useState(false)
     const navigate = useNavigate()
@@ -59,7 +59,10 @@ const Cart = ({cartItems}) => {
           <Typography component="p">Remove</Typography>
           {
             JSON.parse(window.localStorage.getItem("cartItems"))
-              .map((item) => <CartItem itemData={item} key={item.id} />)
+              .map((item) => <CartItem 
+                itemData={item} key={item.id} 
+                deleteCartItem={deleteCartItem}
+              />)
 
           }
           {

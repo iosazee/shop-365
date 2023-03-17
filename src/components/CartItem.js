@@ -1,6 +1,6 @@
 import { Button, CardMedia, Typography } from "@mui/material"
 
-const CartItem = ({itemData}) => {
+const CartItem = ({itemData, deleteCartItem}) => {
     return (
         <>
 
@@ -9,7 +9,11 @@ const CartItem = ({itemData}) => {
             <Typography variant="h6" > {itemData.title} </Typography>
             <Typography variant="p" > £ {itemData.price} </Typography>
             <Typography variant="p" > {itemData.count} </Typography>
-            <Button size="small"  variant="contained" >Delete</Button>
+            <Button size="small"
+                variant="contained"
+                component="button"
+                onClick={() => deleteCartItem(itemData)}
+            >Delete</Button>
         </>
     )
 }

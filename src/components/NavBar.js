@@ -12,13 +12,59 @@ import {AppBar,
     Accordion,
     AccordionSummary,
     AccordionDetails,
-    Grid} from '@mui/material';
+    Grid,
+    styled,
+    alpha,
+    InputBase} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import SearchIcon from '@mui/icons-material/Search';
 
 const categories = ["Men's Clothing", "Women's Clothing", "Jewelery", "Electronics"];
+
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '12ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }));
 
 function NavBar(){
 
@@ -128,7 +174,7 @@ function NavBar(){
                                     {/* Category Menu */}
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
-                                        sx={{ my: 2, color: 'white', display: 'block' }}>
+                                        sx={{ my: 2, color: 'inherit', display: 'block' }}>
                                             Categories
                                         </Button>
                                         <Menu
@@ -165,7 +211,7 @@ function NavBar(){
                                     </Typography>
                                     
                                     {/* Search Bar Toggle */}
-                                    <Button onClick={toggleAccordion}>
+                                    <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none' }}>
                                         <SearchRoundedIcon/>
                                     </Button>
                                 </Grid>
@@ -200,11 +246,18 @@ function NavBar(){
                         </Toolbar>
                     </Container>
                 </AccordionSummary>
+
                 {/* Search Bar */}
                 <AccordionDetails>
-                    <Typography>
-                        Hello There!
-                    </Typography>
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                        placeholder="Search…"
+                        inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
                 </AccordionDetails>
             </Accordion>
         </AppBar>

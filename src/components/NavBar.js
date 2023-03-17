@@ -11,7 +11,8 @@ import {AppBar,
     IconButton,
     Accordion,
     AccordionSummary,
-    AccordionDetails} from '@mui/material';
+    AccordionDetails,
+    Grid} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
@@ -53,7 +54,7 @@ function NavBar(){
         <AppBar position="static">
             <Container>
                 <Toolbar disableGutters>
-
+                <Grid container spacing={0}>
                     <Box sx={{flexGrow: 1, display:{xs:"flex", md:"none"}}}>
                         <IconButton
                             size="large"
@@ -109,8 +110,9 @@ function NavBar(){
                             </MenuItem>
                         </Menu>
                     </Box>
-
-                    <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+                    
+                    <Grid item md={4} sx={{display:'flex', alignItems:'center', justifyContent:'space-evenly'}}>
+                    <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                         <Button onClick={handleOpenCategoryMenu}
                         sx={{ my: 2, color: 'white', display: 'block' }}>
                             Categories
@@ -140,33 +142,39 @@ function NavBar(){
 
                     <Typography
                         variant="button"
-                        sx={{flexGrow: 1, display: { xs: 'none', md: 'flex' }}}
+                        sx={{display: { xs: 'none', md: 'flex' }}}
                     >
                         <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                             Contact Us
                         </Link>
                     </Typography>
+                    </Grid>
 
+                    <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
                     <Typography
                         variant="h6"
-                        sx={{flexGrow: 1, display:'flex'}}
+                        sx={{display:'flex'}}
                     >
                         <Link to="/" style={{color: 'inherit', textDecoration: 'none' }}>
                             Logo
                         </Link>
                     </Typography>
+                    </Grid>
 
-                    <IconButton sx={{flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
+                    <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
+                    <IconButton sx={{display: { xs: 'none', md: 'flex' } }}>
                         <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
                             <AccountIcon/>  
                         </Link>
                     </IconButton>
 
-                    <IconButton sx={{flexGrow: 0 }}>
+                    <IconButton>
                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                             <ShoppingCartIcon />
                         </Link>
                     </IconButton>
+                    </Grid>
+                </Grid>
                 </Toolbar>
             </Container>
         </AppBar>

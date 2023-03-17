@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# SHOP-365
+![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is an eccommerce site that enables users to shop for their clothing, jewellery and electronic needs online. The app consists of a Navbar containing multiple links, company logo and a shopping cart icon. The Navbar also contains a search bar which allows users to carry out a search of products available on the site. Immediately below the Navbar, is the products page or homepage. In this section, users are able to see all the available products on offer. Each product contains two buttons, a add to cart button and a product detail button. Other sections of the app are the product detail page, the cart page, the order confirmation component and the contact us page. Also, there is a footer which contains links, addresses and social media links.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+* [Usage](#usage)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Screenshots](#screenshots)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [License](#license)
 
-### `npm test`
+* [Collaborators](#collaborators)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Tests](#tests)
 
-### `npm run build`
+* [Questions](#questions)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+This is an ecommerce application that enables users to shop for items online at the site. When users open the site, they are presented with the home page and are able to see all the available items on offer. Users can then directly add any item of their choice to their cart via a button on each item or go to the product detils page where they are presented with detailed information about the product including its description and rating. In that page, they can also add the product to thier cart if they wish. After they are through with browsing products and selecting products that they want, they can they take a look at their cart by pressing the cart icon. This  takes them to the cart page, where they can see all the items they have selected. They can then delete an item or checkout. On pressing the checkout button they are presented with a popup element which shows them their order details including total price. They are then prompted to confirm their purchase. If they confirm their purchase, a modal element appears on the screen showing a thank you message and they are redirected back to the homepage.
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is licensed under the MIT license. Read the fine print of [MIT license](https://opensource.org/licenses/MIT)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Collaborators
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* [Alex Ainslie](https://github.com/AlexAins)
+* [Zee Mudia](https://github.com/iosazee)
+* [Mike Davies](https://github.com/welsh-bloke)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+N/A
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Questions
 
-### Code Splitting
+If you have any questions you can contact us at [this emails](iosazee1@gmail.com,alex.ainslie99@gmail.com, Mike@originet.co.uk)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can see more of my work at [my github's profile](https://github.com/iosazee).
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<font size="1">This README was generated by [README-Generator](https://github.com/iosazee/README-Generator)</font>

@@ -74,7 +74,7 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
          />
-         <Route path="*" element={<Navigate to='/products' replace />} />
+         <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
     </section>
   )

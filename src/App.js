@@ -22,6 +22,7 @@ function App() {
   //   console.log(products)
   // }, [products])
 
+
   const addItemToCart = (itemToAdd) => {
 
     const itemIsInCart = cartItems.find((item) => item.id === itemToAdd.id)
@@ -52,6 +53,12 @@ function App() {
   }
 
 
+  const deleteAllCartItems = () => {
+    setCartItems([])
+    window.localStorage.removeItem("cartItems")
+  }
+
+
   return (
     <section className='App'>
       <Routes>
@@ -59,8 +66,10 @@ function App() {
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'
-          element={<Cart cartItems={cartItems} deleteCartItem={deleteCartItem} />}
-
+          element={<Cart cartItems={cartItems}
+            deleteCartItem={deleteCartItem}
+            deleteAllCartItems={deleteAllCartItems}
+          />}
          />
       </Routes>
     </section>

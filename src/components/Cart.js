@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Cart = ({cartItems, deleteCartItem}) => {
+const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
 
     const [isPopUpOpen, setPopUpOpen] = useState(false)
     const navigate = useNavigate()
@@ -25,8 +25,11 @@ const Cart = ({cartItems, deleteCartItem}) => {
 
 
     const confirmPurchase = () => {
+      //hides modal
       handlePopUp()
-
+      //removes all items in cart
+      deleteAllCartItems()
+      //redirects user back to homepage
       navigate("/")
     }
 
@@ -59,8 +62,8 @@ const Cart = ({cartItems, deleteCartItem}) => {
           <Typography component="p">Remove</Typography>
           {
             JSON.parse(window.localStorage.getItem("cartItems"))
-              .map((item) => <CartItem 
-                itemData={item} key={item.id} 
+              .map((item) => <CartItem
+                itemData={item} key={item.id}
                 deleteCartItem={deleteCartItem}
               />)
 

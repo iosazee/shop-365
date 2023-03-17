@@ -23,7 +23,7 @@ const ProductDetail = ({addItemToCart}) => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(resp => resp.json())
             .then(resp => {
-                console.log(resp)
+                // console.log(resp)
                 setSelectedProduct(resp)
             })
     }

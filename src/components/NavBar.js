@@ -64,7 +64,11 @@ function NavBar(){
                     <Container>
                         <Toolbar disableGutters>
                             <Grid container spacing={0}>
+
+                                {/* Left Side Buttons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'space-evenly'}}>
+
+                                    {/* Hamburger Menu */}
                                     <Box sx={{flexGrow: 0, display:{xs:"flex", md:"none"}}}>
                                         <IconButton
                                             size="large"
@@ -120,7 +124,8 @@ function NavBar(){
                                             </MenuItem>
                                         </Menu>
                                     </Box>
-                                
+                                                        
+                                    {/* Category Menu */}
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
                                         sx={{ my: 2, color: 'white', display: 'block' }}>
@@ -148,7 +153,8 @@ function NavBar(){
                                             ))}
                                         </Menu>
                                     </Box>
-
+                                    
+                                    {/* Contact Us Button */}
                                     <Typography
                                         variant="button"
                                         sx={{display: { xs: 'none', md: 'flex' }}}
@@ -157,12 +163,14 @@ function NavBar(){
                                             Contact Us
                                         </Link>
                                     </Typography>
-
+                                    
+                                    {/* Search Bar Toggle */}
                                     <Button onClick={toggleAccordion}>
                                         <SearchRoundedIcon/>
                                     </Button>
                                 </Grid>
-
+                                
+                                {/* Logo */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
                                     <Typography
                                         variant="h6"
@@ -173,7 +181,8 @@ function NavBar(){
                                         </Link>
                                     </Typography>
                                 </Grid>
-
+                                
+                                {/* Right side icons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
                                     <IconButton sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
@@ -191,6 +200,7 @@ function NavBar(){
                         </Toolbar>
                     </Container>
                 </AccordionSummary>
+                {/* Search Bar */}
                 <AccordionDetails>
                     <Typography>
                         Hello There!

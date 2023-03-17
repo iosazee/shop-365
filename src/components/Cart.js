@@ -74,7 +74,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
           }
           {
             cartItems.length ? <CardActions>
-              <Button size="small" onClick={handlePopUp} variant="contained" >CheckOut</Button>
+              <Button size="small" sx={checkoutbtnStyle} onClick={handlePopUp} variant="contained" >checkout</Button>
             </CardActions>
               : null
           }
@@ -102,14 +102,19 @@ const modalStyle = {
 
 const cardStyle = {
   display: "grid",
-  gridTemplateColumns: "120px 120px auto auto auto",
+  gridTemplateColumns: {lg: "120px 120px auto auto auto", xs: "70px 70px auto auto auto"},
   alignItems: "center",
   textAlign: "center",
-  rowGap: "30px",
-  maxWidth: "800px",
+  gap: {lg:"30px", md: "20px", xs:"5px"},
+  maxWidth: {lg:"800px", md: "600px", xs:"400px"},
   padding: "40px",
   margin: "100px auto",
   borderBottom: "2px solid #D9D9D9",
   backgroundColor: "aquamarine"
+}
+
+
+const checkoutbtnStyle = {
+  textTransform: "none"
 }
 

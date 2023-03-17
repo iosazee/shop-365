@@ -12,6 +12,7 @@ const CartItem = ({itemData, deleteCartItem}) => {
             <Button size="small"
                 variant="contained"
                 component="button"
+                sx={{textTransform: "none"}}
                 onClick={() => deleteCartItem(itemData)}
             >Delete</Button>
         </>

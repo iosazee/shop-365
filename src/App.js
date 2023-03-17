@@ -5,6 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import ContactUs from './components/ContactUs';
 import Cart from './components/Cart';
+import NavBar from './components/NavBar';
+
 
 function App() {
 
@@ -61,6 +63,7 @@ function App() {
 
   return (
     <section className='App'>
+      <NavBar />
       <Routes>
         <Route path='/' element={<Products products={products} />} />
         <Route path='/contact' element={<ContactUs />} />

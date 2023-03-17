@@ -7,7 +7,6 @@ function Footer(){
       sx={{
         width: "100%",
         height: "auto",
-        backgroundColor: "secondary.main",
         paddingTop: "1rem",
         paddingBottom: "1rem",
       }}

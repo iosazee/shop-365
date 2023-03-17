@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useParams, Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const ProductDetail = ({addItemToCart}) => {
 
@@ -31,12 +32,14 @@ const ProductDetail = ({addItemToCart}) => {
 
     return (
         <Card sx={{ maxWidth: 345, margin:"40px auto", padding:"20px 5px" }} >
-            <CardMedia
-                sx={{ height: 140, objectFit:"contain" }}
-                component="img"
-                image={selectedProduct.image}
-                title={selectedProduct.title}
-            />
+            <LazyLoad height={140} offset={70} >
+                <CardMedia
+                    sx={{ height: 140, objectFit:"contain" }}
+                    component="img"
+                    image={selectedProduct.image}
+                    title={selectedProduct.title}
+                />
+            </LazyLoad>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                      {selectedProduct.title}
@@ -51,7 +54,8 @@ const ProductDetail = ({addItemToCart}) => {
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={() => addItemToCart(selectedProduct)} >Add to Cart</Button>
-                <Link to="/cart"><Button size="small" >View Cart</Button></Link>
+                <Link to="/cart" style={{textDecoration:"none"}} ><Button size="small" >View Cart</Button></Link>
+                <Link to="/" style={{textDecoration:"none"}} ><Button size="small" >Go back</Button></Link>
             </CardActions>
         </Card>
     );

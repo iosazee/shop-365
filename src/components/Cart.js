@@ -102,7 +102,7 @@ const modalStyle = {
 
 const cardStyle = {
   display: "grid",
-  gridTemplateColumns: {lg: "120px 120px auto auto auto", xs: "70px 70px auto auto auto"},
+  gridTemplateColumns: {lg: "120px 120px auto auto auto", xs: "65px 65px auto auto auto"},
   alignItems: "center",
   textAlign: "center",
   gap: {lg:"30px", md: "20px", xs:"5px"},

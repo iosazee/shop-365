@@ -24,7 +24,7 @@ const ProductCard = ({product}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button sx={{ width: '50%'}} variant='outlined' size='small' startIcon={<AddShoppingCartOutlinedIcon />}> £{product.price.toFixed(2)}</Button>
+        <Link to="/cart" ><Button sx={{ width: '50%'}} variant='outlined' size='small' startIcon={<AddShoppingCartOutlinedIcon />}> £{product.price.toFixed(2)}</Button> </Link>
         <Link to={`/products/${product.id}`} style={{width:"50%", textDecoration:"none"}} >
           <Button sx={{width:"160px"}} variant='outlined'
             color='success' size='small'>Details

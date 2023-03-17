@@ -13,7 +13,6 @@ const Products = ({products}) => {
         ))}
     </Grid>
     </Container>
-   
   )
 }
 

@@ -37,9 +37,9 @@ const Search = styled('div')(({ theme }) => ({
       marginLeft: theme.spacing(1),
       width: 'auto',
     },
-  }));
+}));
   
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
     position: 'absolute',
@@ -47,9 +47,9 @@ const Search = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  }));
+}));
   
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
@@ -64,7 +64,7 @@ const Search = styled('div')(({ theme }) => ({
         },
       },
     },
-  }));
+}));
 
 function NavBar(){
 
@@ -104,7 +104,7 @@ function NavBar(){
     };
 
     return(
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Accordion expanded={searchExpand}>
                 <AccordionSummary>
                     <Container>

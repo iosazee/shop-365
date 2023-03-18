@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Card, Typography, CardActions, Button, Modal, Box } from "@mui/material";
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 
@@ -76,7 +77,10 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
             cartItems.length ? <CardActions>
               <Button size="small" sx={checkoutbtnStyle} onClick={handlePopUp} variant="contained" >checkout</Button>
             </CardActions>
-              : null
+              : <CardActions>
+                <Typography>Your cart is empty!</Typography>
+                <RemoveShoppingCartIcon />
+              </CardActions>
           }
 
         </Card>

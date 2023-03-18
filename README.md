@@ -3,7 +3,7 @@
 
 ## Description
 
-This is an eccommerce site that enables users to shop for their clothing, jewellery and electronic needs online. The app consists of a Navbar containing multiple links, company logo and a shopping cart icon. The Navbar also contains a search bar which allows users to carry out a search of products available on the site. Immediately below the Navbar, is the products page or homepage. In this section, users are able to see all the available products on offer. Each product contains two buttons, a add to cart button and a product detail button. Other sections of the app are the product detail page, the cart page, the order confirmation component and the contact us page. Also, there is a footer which contains links, addresses and social media links.
+This is an ecommerce site that enables users to shop for their clothing, jewellery and electronic needs online. The app consists of a Navbar containing multiple links, company logo and a shopping cart icon. The Navbar also contains a search bar which allows users to carry out a search of products available on the site. Immediately below the Navbar, is the products page or homepage. In this section, users are able to see all the available products on offer. Each product contains two buttons, a add to cart button and a product detail button. Other sections of the app are the product detail page, the cart page, the order confirmation component and the contact us page. Also, there is a footer which contains links, addresses and social media links.
 
 ## Table of Contents
 

@@ -36,58 +36,75 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
     }
 
 
-    return (
+  return (
 
-      <section>
+    <section>
+      {
+        isPopUpOpen && (
+          <Modal open={isPopUpOpen} onClose={handlePopUp} >
+            <Box sx={modalStyle}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Thank you for your order
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Total amount is {calcTotalPrice()}
+              </Typography>
+              <Button onClick={confirmPurchase} >Confirm Purchase</Button>
+            </Box>
+          </Modal>
+        )
+      }
+
+      <Card sx={cardStyle}>
+        <Typography component="p">Item</Typography>
+        <Typography component="div" />
+        <Typography component="p">Price</Typography>
+        <Typography component="p">Quantity</Typography>
+        <Typography component="p">Remove</Typography>
         {
-          isPopUpOpen && (
-            <Modal open={isPopUpOpen} onClose={handlePopUp} >
-              <Box sx={modalStyle}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Thank you for your order
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Total amount is {calcTotalPrice()}
-                </Typography>
-                <Button onClick={confirmPurchase} >Confirm Purchase</Button>
-              </Box>
-            </Modal>
-          )
-        }
-
-        <Card sx={cardStyle}>
-
-          <Typography component="p">Item</Typography>
-          <Typography component="div" />
-          <Typography component="p">Price</Typography>
-          <Typography component="p">Quantity</Typography>
-          <Typography component="p">Remove</Typography>
-          {
-            JSON.parse(window.localStorage.getItem("cartItems"))
-              .map((item) => <CartItem
-                itemData={item} key={item.id}
+          cartItems && cartItems.length > 0 ?
+            cartItems.map((item) => (
+              <CartItem
+                itemData={item}
+                key={item.id}
                 deleteCartItem={deleteCartItem}
-              />)
-
-          }
-          {
-            cartItems.length ? <>Total: {calcTotalPrice()}</>
-              : null
-          }
-          {
-            cartItems.length ? <CardActions>
-              <Button size="small" sx={checkoutbtnStyle} onClick={handlePopUp} variant="contained" >checkout</Button>
+              />
+            )) : (
+              <Typography></Typography>
+            )
+        }
+        {
+          cartItems && cartItems.length > 0 &&
+          <>
+            Total: {calcTotalPrice()}
+            <CardActions>
+              <Button
+                size="small"
+                sx={checkoutbtnStyle}
+                onClick={handlePopUp}
+                variant="contained"
+              >
+                checkout
+              </Button>
             </CardActions>
-              : <CardActions>
-                <Typography>Your cart is empty!</Typography>
-                <RemoveShoppingCartIcon />
-                <Link to="/" ><ArrowBackIcon  style={{marginLeft:"100px", marginTop:"100px"}} /></Link>
-              </CardActions>
-          }
+          </>
+        }
+        {
+          cartItems && cartItems.length === 0 &&
+          <CardActions>
+            <Typography>Your cart is empty!</Typography>
+            <RemoveShoppingCartIcon />
+            <Link to="/" >
+              <ArrowBackIcon
+                style={{ marginLeft: "100px", marginTop: "100px" }}
+              />
+            </Link>
+          </CardActions>
+        }
+      </Card>
 
-        </Card>
-      </section>
-    )
+    </section>
+  )
 }
 
 export default Cart

@@ -20,14 +20,14 @@ function Footer(){
       <Container maxWidth="lg">
         <Grid container>
 
-          <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center', justifyContent:'flex-start'}}>
+          <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center', justifyContent: {xs:'center', sm:'flex-start'}}}>
             <img src={Logo} alt="Logo" style={{maxHeight: "50px", background: "none"}}></img>
             <Typography>Slogan</Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
+          <Grid item xs={12} sm={6} sx={{display:'flex', alignItems: 'center', justifyContent: {xs:'center', sm:'flex-end'}}}>
             <Box>
-              <Box sx={{display:'flex', justifyContent:'flex-end'}}>
+              <Box sx={{display:'flex', justifyContent:{xs:'center', sm:'flex-end'}}}>
                 <a href="" target="_blank">
                   <TwitterIcon />
                 </a>

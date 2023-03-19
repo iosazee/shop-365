@@ -32,13 +32,13 @@ function Footer(){
           <Grid item xs={12} sm={6} sx={{display:'flex', alignItems: 'center', justifyContent: {xs:'center', sm:'flex-end'}}}>
             <Box>
               <Box sx={{display:'flex', justifyContent:{xs:'center', sm:'flex-end'}}}>
-                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent'}}>
+                <a href="https://twitter.com/shop365social" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent'}}>
                   <TwitterIcon sx={{mx: 1}}/>
                 </a>
-                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
+                <a href="https://www.facebook.com/" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <FacebookIcon sx={{mx: 1}}/>
                 </a>
-                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
+                <a href="https://www.instagram.com/" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <InstagramIcon sx={{mx: 1}}/>
                 </a>
               </Box>

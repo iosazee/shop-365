@@ -53,7 +53,7 @@ const ProductDetail = ({addItemToCart}) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" onClick={() => addItemToCart(selectedProduct)} >Add to Cart</Button>
+                <Button size="small" onClick={() => addItemToCart(selectedProduct)} data-testid="add-to-cart" >Add to Cart</Button>
                 <Link to="/cart" style={{textDecoration:"none"}} ><Button size="small" >View Cart</Button></Link>
                 <Link to="/" style={{textDecoration:"none"}} ><Button size="small" >Go back</Button></Link>
             </CardActions>

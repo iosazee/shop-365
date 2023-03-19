@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { Card, Typography, CardActions, Button, Modal, Box } from "@mui/material";
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CartItem from "./CartItem";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 
@@ -80,6 +81,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
               : <CardActions>
                 <Typography>Your cart is empty!</Typography>
                 <RemoveShoppingCartIcon />
+                <Link to="/" ><ArrowBackIcon  style={{marginLeft:"100px", marginTop:"100px"}} /></Link>
               </CardActions>
           }
 

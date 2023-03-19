@@ -18,6 +18,7 @@ import {AppBar,
     InputBase} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SearchIcon from '@mui/icons-material/Search';
@@ -48,7 +49,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
 }));
-  
+
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
@@ -65,6 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
 }));
+
 
 function NavBar(){
 
@@ -90,7 +92,7 @@ function NavBar(){
         setAnchorElNav(null);
     }
 
-    // Category Accordion 
+    // Category Accordion
     const [expanded, setExpanded] = useState('panel1');
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -102,6 +104,11 @@ function NavBar(){
     const toggleAccordion = () => {
       setSearchExpand((prev) => !prev);
     };
+
+    const cartItems = JSON.parse(window.localStorage.getItem("cartItems"));
+    const cartCount = cartItems ? cartItems.map(item => item.count || 0).reduce((a, b) => a + b, 0) : 0;
+
+
 
     return(
         <AppBar position="sticky">
@@ -170,7 +177,6 @@ function NavBar(){
                                             </MenuItem>
                                         </Menu>
                                     </Box>
-                                                        
                                     {/* Category Menu */}
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
@@ -199,7 +205,6 @@ function NavBar(){
                                             ))}
                                         </Menu>
                                     </Box>
-                                    
                                     {/* Contact Us Button */}
                                     <Typography
                                         variant="button"
@@ -209,13 +214,11 @@ function NavBar(){
                                             Contact Us
                                         </Link>
                                     </Typography>
-                                    
                                     {/* Search Bar Toggle */}
                                     <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none' }}>
                                         <SearchRoundedIcon/>
                                     </Button>
                                 </Grid>
-                                
                                 {/* Logo */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
                                     <Typography
@@ -227,20 +230,20 @@ function NavBar(){
                                         </Link>
                                     </Typography>
                                 </Grid>
-                                
                                 {/* Right side icons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
                                     <IconButton sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
-                                            <AccountIcon/>  
+                                            <AccountIcon/>
                                         </Link>
                                     </IconButton>
-
-                                    <IconButton>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
-                                            <ShoppingCartIcon />
+                                            <IconButton>
+                                                <Badge badgeContent={cartCount} color="primary" showZero data-testid="cart-count" >
+                                                    <ShoppingCartIcon color='action' />
+                                                </Badge>
+                                            </IconButton>
                                         </Link>
-                                    </IconButton>
                                 </Grid>
                             </Grid>
                         </Toolbar>

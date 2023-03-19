@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import { Box, Container, Grid, Typography, Button} from "@mui/material";
-import Logo from '../assets/footerLogo.svg';
+import Logo from '../assets/logo.svg';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -32,14 +32,14 @@ function Footer(){
           <Grid item xs={12} sm={6} sx={{display:'flex', alignItems: 'center', justifyContent: {xs:'center', sm:'flex-end'}}}>
             <Box>
               <Box sx={{display:'flex', justifyContent:{xs:'center', sm:'flex-end'}}}>
-                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <TwitterIcon />
+                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent'}}>
+                  <TwitterIcon sx={{mx: 1}}/>
                 </a>
                 <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <FacebookIcon />
+                  <FacebookIcon sx={{mx: 1}}/>
                 </a>
                 <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <InstagramIcon />
+                  <InstagramIcon sx={{mx: 1}}/>
                 </a>
               </Box>
 
@@ -48,7 +48,7 @@ function Footer(){
                   <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
                     About
                   </Link>
-                </Button>            
+                </Button>         
                 <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
                     FAQ

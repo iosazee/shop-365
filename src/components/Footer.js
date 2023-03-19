@@ -14,44 +14,48 @@ function Footer(){
         height: "auto",
         paddingTop: "1rem",
         paddingBottom: "1rem",
-        backgroundColor: "lightgrey"
+        backgroundColor: "#f4f3f3"
       }}
     >
       <Container maxWidth="lg">
         <Grid container>
 
           <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center', justifyContent: {xs:'center', sm:'flex-start'}}}>
-            <img src={Logo} alt="Logo" style={{maxHeight: "50px", background: "none"}}></img>
-            <Typography>Slogan</Typography>
+            <Box sx={{my:2}}>
+              <Box sx={{display:'flex', justifyContent: {xs:'center', sm:'flex-start'}}}>
+                <img src={Logo} alt="Logo" style={{maxHeight: "50px", background: "none"}}></img>
+              </Box>
+              <Typography sx={{color: '#303030', fontStyle: 'italic', textAlign: {xs:'center', sm:'left'}}}>Your one-stop shop for style, value, and convenience.</Typography>
+            </Box>
           </Grid>
 
           <Grid item xs={12} sm={6} sx={{display:'flex', alignItems: 'center', justifyContent: {xs:'center', sm:'flex-end'}}}>
             <Box>
               <Box sx={{display:'flex', justifyContent:{xs:'center', sm:'flex-end'}}}>
-                <a href="" target="_blank">
+                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <TwitterIcon />
                 </a>
-                <a href="" target="_blank">
+                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <FacebookIcon />
                 </a>
-                <a href="" target="_blank">
+                <a href="" target="_blank" style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <InstagramIcon />
                 </a>
               </Box>
 
               <Box sx={{display: 'flex'}}>
-                <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <Link to="/" style={{color: 'inherit', textDecoration: 'none' }}>
+                <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
+                  <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
                     About
                   </Link>
                 </Button>            
-                <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <Link to="/" style={{color: 'inherit', textDecoration: 'none' }}>
+                <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
+                  <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
                     FAQ
                   </Link>
                 </Button> 
-                <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
+                <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
+                  <Link to="/contact" style={{color: '#303030', textDecoration: 'none' }}>
                     Contact Us
                   </Link>
                 </Button> 
@@ -59,8 +63,8 @@ function Footer(){
             </Box>
           </Grid>
 
-          <Grid item xs={12} sx={{borderTop: "1px solid darkgrey"}}>
-            <Typography color="textSecondary" variant="subtitle1">
+          <Grid item xs={12} sx={{borderTop: "1px solid #303030"}}>
+            <Typography color="#999" variant="subtitle1">
               {`© ${new Date().getFullYear()} Shop365 | All Rights Reserved`}
             </Typography>
           </Grid>

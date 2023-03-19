@@ -47,7 +47,7 @@ const ContactUs = () => {
     }
 
     return (
-        <section>
+        <section style={{marginBottom:25}}>
             <Typography variant="h3" style={{marginTop:25}}>Contact Us</Typography>
             <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
                 <CardContent>

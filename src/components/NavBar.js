@@ -22,6 +22,7 @@ import Badge from '@mui/material/Badge';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SearchIcon from '@mui/icons-material/Search';
+import Logo from '../assets/logo.svg';
 
 const categories = ["Men's Clothing", "Women's Clothing", "Jewelery", "Electronics"];
 
@@ -180,6 +181,7 @@ function NavBar(){
                                     {/* Category Menu */}
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
+                                        style={{ backgroundColor: 'transparent' }}
                                         sx={{ my: 2, color: 'inherit', display: 'block' }}>
                                             Categories
                                         </Button>
@@ -206,37 +208,34 @@ function NavBar(){
                                         </Menu>
                                     </Box>
                                     {/* Contact Us Button */}
-                                    <Typography
-                                        variant="button"
-                                        sx={{display: { xs: 'none', md: 'flex' }}}
-                                    >
+                                    <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }} sx={{display: { xs: 'none', md: 'flex' }}}>
                                         <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                                             Contact Us
                                         </Link>
-                                    </Typography>
+                                    </Button>
+                                    
                                     {/* Search Bar Toggle */}
-                                    <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none' }}>
+                                    <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent'}}>
                                         <SearchRoundedIcon/>
                                     </Button>
                                 </Grid>
                                 {/* Logo */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-                                    <Typography
-                                        variant="h6"
-                                        sx={{display:'flex'}}
-                                    >
-                                        <Link to="/" style={{color: 'inherit', textDecoration: 'none' }}>
-                                            Logo
+
+                                        <Link to="/" style={{color: 'inherit', textDecoration: 'none' }} xs={{py: 0}}>
+                                            <img src={Logo} alt="Logo" style={{maxHeight: '65px'}}></img>
                                         </Link>
-                                    </Typography>
+                
                                 </Grid>
                                 {/* Right side icons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
-                                    <IconButton sx={{display: { xs: 'none', md: 'flex' } }}>
+                                    <Button sx={{display: { xs: 'none', md: 'flex' } }} style={{ backgroundColor: 'transparent', color: 'inherit', textDecoration: 'none'}}>
                                         <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
                                             <AccountIcon/>
                                         </Link>
-                                    </IconButton>
+                                    </Button>
+
+                                    <Button style={{backgroundColor: 'transparent', color: 'inherit', textDecoration: 'none'}}>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                                             <IconButton>
                                                 <Badge badgeContent={cartCount} color="primary" showZero data-testid="cart-count" >
@@ -244,6 +243,7 @@ function NavBar(){
                                                 </Badge>
                                             </IconButton>
                                         </Link>
+                                    </Button>
                                 </Grid>
                             </Grid>
                         </Toolbar>

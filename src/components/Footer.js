@@ -64,7 +64,7 @@ function Footer(){
           </Grid>
 
           <Grid item xs={12} sx={{borderTop: "1px solid #303030"}}>
-            <Typography color="#999" variant="subtitle1">
+            <Typography sx={{mt: 1.5}}color="#999" variant="subtitle1">
               {`© ${new Date().getFullYear()} Shop365 | All Rights Reserved`}
             </Typography>
           </Grid>

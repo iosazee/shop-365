@@ -7,6 +7,8 @@ import ContactUs from './components/ContactUs';
 import Cart from './components/Cart';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import About from './components/About';
+import Faq from './components/Faq';
 
 
 function App() {
@@ -75,6 +77,8 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
          />
+        <Route path='/about' element={<About />} />
+        <Route path='/faq' element={<Faq />} />
          <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
       <Footer />

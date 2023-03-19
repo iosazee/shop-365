@@ -45,12 +45,12 @@ function Footer(){
 
               <Box sx={{display: 'flex'}}>
                 <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
+                  <Link to="/about" style={{color: '#303030', textDecoration: 'none' }}>
                     About
                   </Link>
                 </Button>         
                 <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
-                  <Link to="/" style={{color: '#303030', textDecoration: 'none' }}>
+                  <Link to="/faq" style={{color: '#303030', textDecoration: 'none' }}>
                     FAQ
                   </Link>
                 </Button> 

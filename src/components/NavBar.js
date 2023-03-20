@@ -156,23 +156,23 @@ function NavBar(){
                                                     <Typography>Categories</Typography>
                                                 </AccordionSummary>
                                                 <AccordionDetails>
-                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/mens'>
+                                                    <MenuItem  onClick={handleCloseNavMenu}>
+                                                        <Link to='/products/mens' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Men's Clothing</Typography>
                                                         </Link>
                                                     </MenuItem>
-                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/womens'>
+                                                    <MenuItem  onClick={handleCloseNavMenu}>
+                                                        <Link to='/products/womens' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Women's Clothing</Typography>
                                                         </Link>
                                                     </MenuItem>
-                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/jewelery'>
+                                                    <MenuItem  onClick={handleCloseNavMenu}>
+                                                        <Link to='/products/jewelery' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Jewelery</Typography>
                                                         </Link>
                                                     </MenuItem>
-                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/electronics'>
+                                                    <MenuItem  onClick={handleCloseNavMenu}>
+                                                        <Link to='/products/electronics' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Electronics</Typography>
                                                         </Link>
                                                     </MenuItem>
@@ -215,22 +215,22 @@ function NavBar(){
                                             onClose={handleCloseCategoryMenu}
                                         >
                                              <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/mens'>
+                                                        <Link to='/products/mens' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Men's Clothing</Typography>
                                                         </Link>
                                                     </MenuItem>
                                                     <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/womens'>
+                                                        <Link to='/products/womens' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Women's Clothing</Typography>
                                                         </Link>
                                                     </MenuItem>
                                                     <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/jewelery'>
+                                                        <Link to='/products/jewelery' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Jewelery</Typography>
                                                         </Link>
                                                     </MenuItem>
                                                     <MenuItem  onClick={handleCloseCategoryMenu}>
-                                                        <Link to='/products/electronics'>
+                                                        <Link to='/products/electronics' style={{color: 'inherit', textDecoration: 'none' }}>
                                                             <Typography textAlign="center">Electronics</Typography>
                                                         </Link>
                                                     </MenuItem>
@@ -250,11 +250,9 @@ function NavBar(){
                                 </Grid>
                                 {/* Logo */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-
-                                        <Link to="/" style={{color: 'inherit', textDecoration: 'none' }} xs={{py: 0}}>
-                                            <img src={Logo} alt="Logo" style={{maxHeight: '65px'}}></img>
-                                        </Link>
-                
+                                    <Link to="/" style={{color: 'inherit', textDecoration: 'none' }} xs={{py: 0}}>
+                                        <img src={Logo} alt="Logo" style={{maxHeight: '65px'}}></img>
+                                    </Link>
                                 </Grid>
                                 {/* Right side icons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>

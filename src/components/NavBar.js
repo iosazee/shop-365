@@ -24,8 +24,6 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../assets/logo.svg';
 
-const categories = ["Men's Clothing", "Women's Clothing", "Jewelery", "Electronics"];
-
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -158,11 +156,26 @@ function NavBar(){
                                                     <Typography>Categories</Typography>
                                                 </AccordionSummary>
                                                 <AccordionDetails>
-                                                    {categories.map((category) => (
-                                                        <MenuItem key={category} onClick={handleCloseCategoryMenu}>
-                                                            <Typography textAlign="center">{category}</Typography>
-                                                        </MenuItem>
-                                                    ))}
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/mens'>
+                                                            <Typography textAlign="center">Men's Clothing</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/womens'>
+                                                            <Typography textAlign="center">Women's Clothing</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/jewelery'>
+                                                            <Typography textAlign="center">Jewelery</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/electronics'>
+                                                            <Typography textAlign="center">Electronics</Typography>
+                                                        </Link>
+                                                    </MenuItem>
                                                 </AccordionDetails>
                                             </Accordion> 
 
@@ -178,6 +191,7 @@ function NavBar(){
                                             </MenuItem>
                                         </Menu>
                                     </Box>
+
                                     {/* Category Menu */}
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
@@ -200,11 +214,26 @@ function NavBar(){
                                             open={Boolean(categoryMenu)}
                                             onClose={handleCloseCategoryMenu}
                                         >
-                                            {categories.map((category) => (
-                                                <MenuItem key={category} onClick={handleCloseCategoryMenu}>
-                                                    <Typography textAlign="center">{category}</Typography>
-                                                </MenuItem>
-                                            ))}
+                                             <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/mens'>
+                                                            <Typography textAlign="center">Men's Clothing</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/womens'>
+                                                            <Typography textAlign="center">Women's Clothing</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/jewelery'>
+                                                            <Typography textAlign="center">Jewelery</Typography>
+                                                        </Link>
+                                                    </MenuItem>
+                                                    <MenuItem  onClick={handleCloseCategoryMenu}>
+                                                        <Link to='/products/electronics'>
+                                                            <Typography textAlign="center">Electronics</Typography>
+                                                        </Link>
+                                                    </MenuItem>
                                         </Menu>
                                     </Box>
                                     {/* Contact Us Button */}

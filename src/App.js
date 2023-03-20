@@ -74,7 +74,7 @@ function App() {
     <section className='App'>
       <NavBar setSearchWord={setSearchWord} addItemToCart={addItemToCart} />
       <Routes>        
-        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={searchProducts} /> </> } />
+        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'
           element={<Cart cartItems={cartItems}
@@ -82,6 +82,7 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
          />
+        <Route path='/products/search' element={<Products products={searchProducts}/>}/>
         <Route path='/products/mens' element={<Products products={menProducts} />}/>
         <Route path='/products/womens' element={<Products products={womenProducts} />}/>
         <Route path='/products/electronics' element={<Products products={electronicProducts} />}/>

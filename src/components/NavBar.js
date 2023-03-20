@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {AppBar,
     Container,
     Toolbar,
@@ -107,9 +107,12 @@ function NavBar({setSearchWord}){
     const cartItems = JSON.parse(window.localStorage.getItem("cartItems"));
     const cartCount = cartItems ? cartItems.map(item => item.count || 0).reduce((a, b) => a + b, 0) : 0;
 
+    const navigate = useNavigate()
+
     const searchHandler = (e) => {
         e.preventDefault();
         toggleAccordion();
+        navigate('/products/search');
     }
 
 
@@ -281,16 +284,16 @@ function NavBar({setSearchWord}){
                 {/* Search Bar */}
                 <AccordionDetails>
                     <form onSubmit={searchHandler}>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                        placeholder="Search…"
-                        inputProps={{ 'aria-label': 'search' }}
-                        onChange = {(e) => setSearchWord(e.target.value)}
-                        />
-                    </Search>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ 'aria-label': 'search' }}
+                            onChange = {(e) => setSearchWord(e.target.value)}
+                            />
+                        </Search>
                     </form>
                 </AccordionDetails>
             </Accordion>

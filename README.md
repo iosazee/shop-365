@@ -54,7 +54,7 @@ This project is licensed under the MIT license. Read the fine print of [MIT lice
 ## Tests
 
 ```
-N/A
+Run the command "npm run test" to run the tests which test for behavior of different components of the app.
 ```
 
 ## Questions

@@ -24,10 +24,10 @@ function App() {
       .then(data => setProducts(data))
   }, [])
 
-  // useEffect(() => {
-  //   console.log(products)
-  // }, [products])
-
+  const menProducts = products.filter(product => product.category ==="men's clothing");
+  const womenProducts = products.filter(product => product.category ==="women's clothing");
+  const electronicProducts = products.filter(product => product.category ==="electronics");
+  const jeweleryProducts = products.filter(product => product.category ==="jewelery");
 
   const addItemToCart = (itemToAdd) => {
 
@@ -68,9 +68,7 @@ function App() {
   return (
     <section className='App'>
       <NavBar  addItemToCart={addItemToCart} />
-      <Routes>
-        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
-        <Route path='/contact' element={<ContactUs />} />
+      <Routes>        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'
           element={<Cart cartItems={cartItems}
@@ -78,6 +76,8 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
          />
+        <Route path='/products/mens' element={<Products products={menProducts} />}/>
+        <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<About />} />
         <Route path='/faq' element={<Faq />} />
         <Route path="*" element={<Navigate to='/' replace />} />

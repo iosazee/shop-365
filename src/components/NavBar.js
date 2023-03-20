@@ -234,8 +234,6 @@ function NavBar(){
                                             <AccountIcon/>
                                         </Link>
                                     </Button>
-
-                                    <Button style={{backgroundColor: 'transparent', color: 'inherit', textDecoration: 'none'}}>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                                             <IconButton>
                                                 <Badge badgeContent={cartCount} color="primary" showZero data-testid="cart-count" >
@@ -243,7 +241,6 @@ function NavBar(){
                                                 </Badge>
                                             </IconButton>
                                         </Link>
-                                    </Button>
                                 </Grid>
                             </Grid>
                         </Toolbar>

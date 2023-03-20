@@ -67,7 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function NavBar({products}){
+function NavBar({setSearchWord}){
 
     // Category Dropdown
     const [categoryMenu, setCategoryMenu] = useState(null);
@@ -107,16 +107,10 @@ function NavBar({products}){
     const cartItems = JSON.parse(window.localStorage.getItem("cartItems"));
     const cartCount = cartItems ? cartItems.map(item => item.count || 0).reduce((a, b) => a + b, 0) : 0;
 
-    // Search
-    const [searchWord, setSearchWord] = useState("");
-
     const searchHandler = (e) => {
         e.preventDefault()
-
-        const searchProduct = products.filter((el) => el.title.toLowerCase().includes(searchWord.toLowerCase()));
-        console.log(searchProduct, searchWord);
-        
     }
+
 
     return(
         <AppBar position="sticky">

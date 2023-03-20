@@ -16,6 +16,7 @@ function App() {
 
   const [products, setProducts] = useState([])
   const [cartItems, setCartItems] = useState([])
+  const [searchWord, setSearchWord] = useState("");
 
 
   useEffect(() => {
@@ -64,7 +65,6 @@ function App() {
     window.localStorage.removeItem("cartItems")
   }
 
-  const [searchWord, setSearchWord] = useState("");
 
   const searchProducts = products.filter((el) => el.title.toLowerCase().includes(searchWord.toLowerCase()));
 
@@ -72,8 +72,8 @@ function App() {
 
   return (
     <section className='App'>
-      <NavBar setSearchWord={setSearchWord} addItemToCart={addItemToCart} />
-      <Routes>        
+      <NavBar setSearchWord={setSearchWord} />
+      <Routes>
         <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'

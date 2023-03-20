@@ -249,7 +249,6 @@ function NavBar({setSearchWord}){
                                             Contact Us
                                         </Link>
                                     </Button>
-                                    
                                     {/* Search Bar Toggle */}
                                     <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent'}}>
                                         <SearchRoundedIcon/>

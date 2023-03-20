@@ -16,6 +16,17 @@ function App() {
 
   const [products, setProducts] = useState([])
   const [cartItems, setCartItems] = useState([])
+  const [searchQuery, setSearchWord] = useState("");
+  const [isSearchSubmiited, setSearchSubmission]  = useState(false)
+
+
+  const handleSearchQuery = (e) => {
+    setSearchWord(e.target.value)
+
+    if(e.target.value === ""){
+      setSearchSubmission(false)
+    }
+  }
 
 
   useEffect(() => {
@@ -64,16 +75,25 @@ function App() {
     window.localStorage.removeItem("cartItems")
   }
 
-  const [searchWord, setSearchWord] = useState("");
 
-  const searchProducts = products.filter((el) => el.title.toLowerCase().includes(searchWord.toLowerCase()));
+  const searchProducts = products.filter((el) => {
+
+    return searchQuery !== "" && isSearchSubmiited
+    ? el.title.toLowerCase().includes(searchQuery.toLowerCase()) ? el : null
+    : null
+  })
+
 
 
 
   return (
     <section className='App'>
-      <NavBar setSearchWord={setSearchWord} addItemToCart={addItemToCart} />
-      <Routes>        
+      <NavBar
+        searchQuery={searchQuery}
+        handleSearchQuery={handleSearchQuery}
+        setSearchSubmission={setSearchSubmission}
+      />
+      <Routes>
         <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'

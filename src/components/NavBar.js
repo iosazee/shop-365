@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {AppBar,
     Container,
     Toolbar,
@@ -38,19 +38,11 @@ const Search = styled('div')(({ theme }) => ({
       width: 'auto',
     },
 }));
-  
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
+
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
+    backgroundColor: "#00ff335e",
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
@@ -67,7 +59,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function NavBar({setSearchWord}){
+function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
 
     // Category Dropdown
     const [categoryMenu, setCategoryMenu] = useState(null);
@@ -109,11 +101,12 @@ function NavBar({setSearchWord}){
 
     const navigate = useNavigate()
 
-    const searchHandler = (e) => {
-        e.preventDefault();
-        toggleAccordion();
-        navigate('/products/search');
-    }
+    const handleSearchSubmit =(e) => {
+        e.preventDefault()
+        setSearchSubmission(true)
+        toggleAccordion()
+        navigate("/products/search")
+      }
 
 
     return(
@@ -249,7 +242,6 @@ function NavBar({setSearchWord}){
                                             Contact Us
                                         </Link>
                                     </Button>
-                                    
                                     {/* Search Bar Toggle */}
                                     <Button onClick={toggleAccordion} style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent'}}>
                                         <SearchRoundedIcon/>
@@ -283,16 +275,17 @@ function NavBar({setSearchWord}){
 
                 {/* Search Bar */}
                 <AccordionDetails>
-                    <form onSubmit={searchHandler}>
+                    <form onSubmit={handleSearchSubmit}>
                         <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
                             <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
-                            onChange = {(e) => setSearchWord(e.target.value)}
+                            onChange = {handleSearchQuery}
+                            value={searchQuery}
                             />
+                            <Button type='submit' variant="contained" >
+                                <SearchIcon />
+                            </Button>
                         </Search>
                     </form>
                 </AccordionDetails>

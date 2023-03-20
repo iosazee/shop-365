@@ -107,7 +107,14 @@ function NavBar(){
     const cartItems = JSON.parse(window.localStorage.getItem("cartItems"));
     const cartCount = cartItems ? cartItems.map(item => item.count || 0).reduce((a, b) => a + b, 0) : 0;
 
+    // Search
+    const [searchWord, setSearchWord] = useState("");
 
+    const searchHandler = (e) => {
+        e.preventDefault()
+
+        
+    }
 
     return(
         <AppBar position="sticky">
@@ -276,6 +283,7 @@ function NavBar(){
 
                 {/* Search Bar */}
                 <AccordionDetails>
+                    <form onSubmit={searchHandler}>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -283,8 +291,10 @@ function NavBar(){
                         <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        onChange = {(e) => setSearchWord(e.target.value)}
                         />
                     </Search>
+                    </form>
                 </AccordionDetails>
             </Accordion>
         </AppBar>

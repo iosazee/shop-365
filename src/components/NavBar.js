@@ -67,7 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-function NavBar(){
+function NavBar({products}){
 
     // Category Dropdown
     const [categoryMenu, setCategoryMenu] = useState(null);
@@ -113,6 +113,8 @@ function NavBar(){
     const searchHandler = (e) => {
         e.preventDefault()
 
+        const searchProduct = products.filter((el) => el.title.toLowerCase().includes(searchWord.toLowerCase()));
+        console.log(searchProduct, searchWord);
         
     }
 

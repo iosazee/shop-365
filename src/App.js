@@ -67,7 +67,7 @@ function App() {
 
   return (
     <section className='App'>
-      <NavBar  addItemToCart={addItemToCart} />
+      <NavBar products={products} addItemToCart={addItemToCart} />
       <Routes>        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'

@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import About from './components/About';
 import Faq from './components/Faq';
+import FeaturedProduct from './components/FeaturedProduct';
 
 
 function App() {
@@ -68,7 +69,7 @@ function App() {
     <section className='App'>
       <NavBar  addItemToCart={addItemToCart} />
       <Routes>
-        <Route exact  path='/' element={<Products products={products} />} />
+        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'

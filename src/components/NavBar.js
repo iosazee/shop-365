@@ -108,7 +108,8 @@ function NavBar({setSearchWord}){
     const cartCount = cartItems ? cartItems.map(item => item.count || 0).reduce((a, b) => a + b, 0) : 0;
 
     const searchHandler = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        toggleAccordion();
     }
 
 

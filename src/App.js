@@ -64,11 +64,17 @@ function App() {
     window.localStorage.removeItem("cartItems")
   }
 
+  const [searchWord, setSearchWord] = useState("");
+
+  const searchProducts = products.filter((el) => el.title.toLowerCase().includes(searchWord.toLowerCase()));
+
+
 
   return (
     <section className='App'>
-      <NavBar  addItemToCart={addItemToCart} />
-      <Routes>        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
+      <NavBar setSearchWord={setSearchWord} addItemToCart={addItemToCart} />
+      <Routes>        
+        <Route exact  path='/' element={ <> <FeaturedProduct products={products} /> <Products products={products} /> </> } />
         <Route path='/products/:id' element={<ProductDetail addItemToCart={addItemToCart} />} />
         <Route path='/cart'
           element={<Cart cartItems={cartItems}
@@ -76,6 +82,7 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
          />
+        <Route path='/products/search' element={<Products products={searchProducts}/>}/>
         <Route path='/products/mens' element={<Products products={menProducts} />}/>
         <Route path='/products/womens' element={<Products products={womenProducts} />}/>
         <Route path='/products/electronics' element={<Products products={electronicProducts} />}/>

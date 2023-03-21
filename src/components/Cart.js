@@ -14,7 +14,9 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
     const [isPopUpOpen, setPopUpOpen] = useState(false)
     const navigate = useNavigate()
 
+
     const handlePopUp = () => setPopUpOpen(!isPopUpOpen)
+
 
     const calcTotalPrice = () => {
       let totalItemCost = 0
@@ -25,6 +27,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
       return totalItemCost.toFixed(2)
     }
 
+
     const confirmPurchase = () => {
       //hides modal
       handlePopUp()
@@ -34,8 +37,6 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
       navigate("/")
     }
 
-
-    console.log(cartItems)
 
   return (
 
@@ -115,7 +116,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
   )
 }
 
-export default Cart
+export default Cart;
 
 
 const modalStyle = {

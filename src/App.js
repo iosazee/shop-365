@@ -19,6 +19,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchSubmiited, setSearchSubmission] = useState(false)
+  //eslint-disable-next-line
   const [error, setError] = useState(null)
 
 

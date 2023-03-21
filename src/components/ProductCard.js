@@ -4,7 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 
@@ -27,10 +26,9 @@ const ProductCard = ({product}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button sx={{ width: '50%'}} variant='outlined' size='small' startIcon={<AddShoppingCartOutlinedIcon />}> £{product.price.toFixed(2)}</Button>
-        <Link to={`/products/${product.id}`} style={{width:"50%", textDecoration:"none"}} >
-          <Button sx={{width:"160px"}} variant='outlined'
-            color='success' size='small'>Details
+        <Link to={`/products/${product.id}`} style={{width:"100%", textDecoration:"none"}} >
+          <Button fullWidth={true} variant='outlined' color='success' size='small'>
+          £{product.price.toFixed(2)} - Details
           </Button>
         </Link>
       </CardActions>

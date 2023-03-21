@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Products from './components/Products'
 import ProductDetail from './components/ProductDetail';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
 import ContactUs from './components/ContactUs';
 import Cart from './components/Cart';
 import NavBar from './components/NavBar';
@@ -10,6 +9,8 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Faq from './components/Faq';
 import FeaturedProduct from './components/FeaturedProduct';
+import { supabase } from './supabaseClient';
+import './App.css';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchSubmiited, setSearchSubmission] = useState(false)
+  const [error, setError] = useState(null)
 
 
   const handleSearchQuery = (e) => {
@@ -29,9 +31,28 @@ function App() {
 
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
+    const fetchProducts = async () => {
+      const { data, error } = await supabase
+        .from('products')
+        .select()
+
+        if (error) {
+          setError('Could not fetch products')
+          setProducts(null)
+          console.log(error)
+        }
+
+        if (data) {
+          setError(null)
+          setProducts(data)
+          console.log(data)
+        }
+    }
+
+    fetchProducts()
+    // fetch('https://fakestoreapi.com/products')
+    //   .then(res => res.json())
+    //   .then(data => setProducts(data))
   }, [])
 
 

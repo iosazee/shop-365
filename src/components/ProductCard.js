@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
-import Badge from '@mui/material/Badge';
 
 
 const ProductCard = ({product}) => {

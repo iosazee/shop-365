@@ -3,10 +3,10 @@ import LazyLoad from "react-lazy-load";
 import { Link } from "react-router-dom";
 
 const FeaturedProduct = ({ products }) => {
-  const selectedProduct = products.filter((item) => item.id === 14)[0];
-  const image = selectedProduct?.image;
-  const title = selectedProduct?.title;
-  const id = selectedProduct?.id
+  const featuredProduct = products.filter((item) => item.id === 14)[0];
+  const image = featuredProduct?.image;
+  const title = featuredProduct?.title;
+  const id = featuredProduct?.id
 
   return (
         <Card

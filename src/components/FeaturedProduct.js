@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const FeaturedProduct = ({ products }) => {
   const featuredProduct = products.filter((item) => item.id === 14)[0];
-  const image = featuredProduct?.image;
-  const title = featuredProduct?.title;
+  const image = featuredProduct?.image ?? `${require("../assets/logo.svg").default}`
+  const title = featuredProduct?.title ?? "WELCOME TO SHOP-365"
   const id = featuredProduct?.id
 
   return (

@@ -14,7 +14,9 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
     const [isPopUpOpen, setPopUpOpen] = useState(false)
     const navigate = useNavigate()
 
+
     const handlePopUp = () => setPopUpOpen(!isPopUpOpen)
+
 
     const calcTotalPrice = () => {
       let totalItemCost = 0
@@ -43,13 +45,20 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
         isPopUpOpen && (
           <Modal open={isPopUpOpen} onClose={handlePopUp} >
             <Box sx={modalStyle}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
+              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{textAlign:"center"}} >
                 Thank you for your order
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Total amount is {calcTotalPrice()}
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your Order Summary: {cartItems.map(item => {
+                  return <Typography key={item.id} sx={{my:1}} >
+                    {item.title}
+                  </Typography>
+                })}
               </Typography>
-              <Button onClick={confirmPurchase} >Confirm Purchase</Button>
+              <Typography id="modal-modal-description" sx={{ mt: 2, fontWeight:600 }}>
+                Total amount is £{calcTotalPrice()}
+              </Typography>
+              <Button onClick={confirmPurchase} sx={{textAlign:"center"}} variant="contained" >Confirm Purchase</Button>
             </Box>
           </Modal>
         )
@@ -107,7 +116,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
   )
 }
 
-export default Cart
+export default Cart;
 
 
 const modalStyle = {

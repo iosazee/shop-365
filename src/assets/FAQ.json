@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "question" : "How can I get in Contact?",
+        "answer" : "If you would like to get in contact with us, please send a message on the Contact Us page, or visit one of our social medias and send us a message on there."
+    },
+    {
+        "id": 2,
+        "question" : "Can I track my Order?",
+        "answer" : "Absolutely. Once your oder is dispatched, you will receive an email containing a tracking number and more information regarding your package. If you require help please fill out our contact form."
+    },
+    {
+        "id": 3,
+        "question" : "Can I cancel or change my Order?",
+        "answer" : "Please fill out a contact form including your name and order number. We will try our best to fulfill your request however if your order has already been dispatched you will need to return it for a refund or an exchange."
+    },
+    {
+        "id": 4,
+        "question" : "There was a mistake with my Order?",
+        "answer" : "If you received the wrong item, or if something is missing from your order, we are sorry! Please fill out a contact form including your name and order number. We will try and solve this issue as fast as possible."
+    },
+    {
+        "id": 5,
+        "question" : "What countries do you ship to?",
+        "answer" : "We ship to over 150 countries, for a full list please fill in a contact form and the full list will be emailed to you."
+    },
+    {
+        "id": 6,
+        "question" : "What is your Return Policy?",
+        "answer" : "If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. "
+    },
+    {
+        "id": 7,
+        "question": "How do I know if an item is in stock?",
+        "answer": "If you are able to add your item to the cart you are in luck, we have your selected item available. If you do see any other piece on our site that you would like to know more about or find out when it will be back in stock, please contact us and we will answer your query."
+    },
+    {
+        "id": 8,
+        "question": "How long will it take to receive my Order?",
+        "answer": "Orders typically ship within 1-2 business days, and delivery times vary depending on your location."
+    },
+    {
+        "id": 9,
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards, as well as Paypal."
+    },
+    {
+        "id": 10,
+        "question": "What if my order arrives damaged?",
+        "answer": "We take great care in packaging our products to prevent damage during shipping, but in the unlikely event that your order arrives damaged, please contact us immediately so we can make it right."
+    },
+    {
+        "id": 11,
+        "question": "How do I know if my order has been processed?",
+        "answer": "You will receive an email confirmation once your order has been processed and shipped. If you have not received a confirmation email, please check your spam folder or contact customer service."
+    }
+]

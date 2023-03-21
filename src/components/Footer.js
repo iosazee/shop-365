@@ -51,7 +51,7 @@ function Footer(){
                 </Button>         
                 <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>
                   <Link to="/faq" style={{color: '#303030', textDecoration: 'none' }}>
-                    FAQ
+                    FAQ's
                   </Link>
                 </Button> 
                 <Button style={{color: '#303030', textDecoration: 'none', backgroundColor: 'transparent' }}>

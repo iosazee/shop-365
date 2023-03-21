@@ -16,7 +16,7 @@ function Faq(){
             <Paper elevation={3} sx={{my: 3}}>
                 {FAQ.map((faq) => {
                 return (
-                    <Accordion key={faq.id} expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>
+                    <Accordion disableGutters={true} key={faq.id} expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>
                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                             <Typography>{faq.question}</Typography>
                         </AccordionSummary>

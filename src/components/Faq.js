@@ -29,6 +29,9 @@ function Faq(){
                 )
                 })}
             </Paper>
+            <Typography sx={{my: 2}}>
+                Can't find the question or the answer you are looking for? Please don’t hesitate to contact us
+            </Typography>
         </Container>
     )
 }

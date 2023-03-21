@@ -13,5 +13,20 @@
         "id": 3,
         "question" : "Can I cancel or change my Order?",
         "answer" : "Please fill out a contact form including your name and order number. We will try our best to fulfill your request however if your order has already been dispatched you will need to return it for a refund or an exchange."
+    },
+    {
+        "id": 4,
+        "question" : "There was a mistake with my Order?",
+        "answer" : "If you received the wrong item, or if something is missing from your order, we are sorry! Please fill out a contact form including your name and order number. We will try and solve this issue as fast as possible"
+    },
+    {
+        "id": 5,
+        "question" : "What countries do you ship to?",
+        "answer" : "We ship to over 150 countries, for a full list please fill in a contact form and the full list will be emailed to you"
+    },
+    {
+        "id": 6,
+        "question" : "What is your Return Policy?",
+        "answer" : "If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. "
     }
 ]

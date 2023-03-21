@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "question" : "How can I get in Contact?",
+        "answer" : "If you would like to get in contact with us, please send a message on the Contact Us page, or visit one of our social medias and send us a message on there."
+    },
+    {
+        "id": 2,
+        "question" : "Can I track my Order?",
+        "answer" : "Absolutely. Once your oder is dispatched, you will receive an email containing a tracking number and more information regarding your package. If you require help please fill out our contact form."
+    },
+    {
+        "id": 3,
+        "question" : "Can I cancel or change my Order?",
+        "answer" : "Please fill out a contact form including your name and order number. We will try our best to fulfill your request however if your order has already been dispatched you will need to return it for a refund or an exchange."
+    }
+]

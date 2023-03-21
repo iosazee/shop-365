@@ -1,11 +1,34 @@
 import React from 'react';
-import {Container, Typography } from "@mui/material";
+import {Container, Typography, Accordion, AccordionSummary, AccordionDetails, Paper } from "@mui/material";
+import FAQ from '../assets/FAQ.json';
 
 function Faq(){
 
+    const [expanded, setExpanded] = React.useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+      setExpanded(newExpanded ? panel : false);
+    };
+
     return(
         <Container>
-            <Typography>Need to finish</Typography>
+            <Typography>FAQ</Typography>
+            <Paper elevation={3} sx={{my: 3}}>
+                {FAQ.map((faq) => {
+                return (
+                    <Accordion expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>
+                        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                            <Typography>{faq.question}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                {faq.answer}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                )
+                })}
+            </Paper>
         </Container>
     )
 }

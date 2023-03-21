@@ -1,11 +1,14 @@
 import React from 'react';
-import {Container, Typography } from "@mui/material";
+import {Container, Typography, Paper } from "@mui/material";
 
 function About(){
 
     return(
         <Container>
-            <Typography>Need to finish</Typography>
+            <Typography>About Us</Typography>
+            <Paper elevation={3} sx={{my: 3}}>
+                SHOP 365
+            </Paper>
         </Container>
     )
 }

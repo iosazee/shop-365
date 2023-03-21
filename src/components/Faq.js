@@ -4,7 +4,7 @@ import FAQ from '../assets/FAQ.json';
 
 function Faq(){
 
-    const [expanded, setExpanded] = React.useState('panel1');
+    const [expanded, setExpanded] = React.useState('panel0');
 
     const handleChange = (panel) => (event, newExpanded) => {
       setExpanded(newExpanded ? panel : false);
@@ -16,7 +16,7 @@ function Faq(){
             <Paper elevation={3} sx={{my: 3}}>
                 {FAQ.map((faq) => {
                 return (
-                    <Accordion expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>
+                    <Accordion key={faq.id} expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>
                         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                             <Typography>{faq.question}</Typography>
                         </AccordionSummary>

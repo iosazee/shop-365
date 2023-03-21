@@ -17,16 +17,21 @@
     {
         "id": 4,
         "question" : "There was a mistake with my Order?",
-        "answer" : "If you received the wrong item, or if something is missing from your order, we are sorry! Please fill out a contact form including your name and order number. We will try and solve this issue as fast as possible"
+        "answer" : "If you received the wrong item, or if something is missing from your order, we are sorry! Please fill out a contact form including your name and order number. We will try and solve this issue as fast as possible."
     },
     {
         "id": 5,
         "question" : "What countries do you ship to?",
-        "answer" : "We ship to over 150 countries, for a full list please fill in a contact form and the full list will be emailed to you"
+        "answer" : "We ship to over 150 countries, for a full list please fill in a contact form and the full list will be emailed to you."
     },
     {
         "id": 6,
         "question" : "What is your Return Policy?",
         "answer" : "If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. "
+    },
+    {
+        "id": 7,
+        "question": "How do I know if an item is in stock?",
+        "answer": "If you are able to select your colour and size then you are in luck, we have your selected item available. Please note that until you finalise your purchase, your item/s can be purchased by another customer as we do not reserve stock which is held in your shopping bag. If you do see any other piece on our site that you would like to know more about or find out when it will be back in stock, please email info@ryderlabel.com and we will answer your query."
     }
 ]

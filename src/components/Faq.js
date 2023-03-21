@@ -12,8 +12,8 @@ function Faq(){
 
     return(
         <Container>
-            <Typography variant="h3" style={{marginTop:25}}>FAQs</Typography>
-            <Paper elevation={3} sx={{my: 3}}>
+            <Typography variant="h3" style={{marginTop:30}}>FAQs</Typography>
+            <Paper elevation={3} sx={{my: 4}}>
                 {FAQ.map((faq) => {
                 return (
                     <Accordion disableGutters={true} key={faq.id} expanded={expanded === `panel${faq.id}`} onChange={handleChange(`panel${faq.id}`)}>

@@ -106,7 +106,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
         setSearchSubmission(true)
         toggleAccordion()
         navigate("/products/search")
-      }
+    }
 
 
     return(

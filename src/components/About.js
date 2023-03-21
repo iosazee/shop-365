@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Typography, Paper } from "@mui/material";
+import {Container, Typography} from "@mui/material";
 
 function About(){
 

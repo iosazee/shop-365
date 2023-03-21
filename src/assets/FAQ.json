@@ -32,6 +32,26 @@
     {
         "id": 7,
         "question": "How do I know if an item is in stock?",
-        "answer": "If you are able to select your colour and size then you are in luck, we have your selected item available. Please note that until you finalise your purchase, your item/s can be purchased by another customer as we do not reserve stock which is held in your shopping bag. If you do see any other piece on our site that you would like to know more about or find out when it will be back in stock, please email info@ryderlabel.com and we will answer your query."
+        "answer": "If you are able to add your item to the cart you are in luck, we have your selected item available. If you do see any other piece on our site that you would like to know more about or find out when it will be back in stock, please contact us and we will answer your query."
+    },
+    {
+        "id": 8,
+        "question": "How long will it take to receive my Order?",
+        "answer": "Orders typically ship within 1-2 business days, and delivery times vary depending on your location."
+    },
+    {
+        "id": 9,
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards, as well as Paypal."
+    },
+    {
+        "id": 10,
+        "question": "What if my order arrives damaged?",
+        "answer": "We take great care in packaging our products to prevent damage during shipping, but in the unlikely event that your order arrives damaged, please contact us immediately so we can make it right."
+    },
+    {
+        "id": 11,
+        "question": "How do I know if my order has been processed?",
+        "answer": "You will receive an email confirmation once your order has been processed and shipped. If you have not received a confirmation email, please check your spam folder or contact customer service."
     }
 ]

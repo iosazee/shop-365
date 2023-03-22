@@ -11,7 +11,7 @@ function Faq(){
     };
 
     return(
-        <Container>
+        <Container sx={{flexGrow:1}}>
             <Typography variant="h3" style={{marginTop:30}}>FAQs</Typography>
             <Paper elevation={3} sx={{my: 4}}>
                 {FAQ.map((faq) => {

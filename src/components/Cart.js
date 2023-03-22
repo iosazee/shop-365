@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Card, Typography, CardActions, Button, Modal, Box } from "@mui/material";
+import { Card, Typography, CardActions, Button, Modal, Box, Container } from "@mui/material";
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CartItem from "./CartItem";
@@ -40,7 +40,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
 
   return (
 
-    <section>
+    <Container sx={{flexGrow:1}}>
       {
         isPopUpOpen && (
           <Modal open={isPopUpOpen} onClose={handlePopUp} >
@@ -112,7 +112,7 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
         }
       </Card>
 
-    </section>
+    </Container>
   )
 }
 

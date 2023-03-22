@@ -4,7 +4,7 @@ import {Container, Typography} from "@mui/material";
 function About(){
 
     return(
-        <Container>
+        <Container sx={{flexGrow:1}}>
             <Typography variant="h3" style={{marginTop:25}}>About Us</Typography>
             <Container  sx={{my: 4}}>
                 <Typography sx={{my: 1}}>

@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Container from "@mui/material/Container";
 import { useParams, Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 
@@ -48,7 +49,8 @@ const ProductDetail = ({addItemToCart}) => {
 
 
     return (
-        <Card  style={{backgroundColor: "#a3b1c699"}} >
+        <Container sx={{flexGrow:1}}>
+        <Card elevation={0} sx={{background: "transparent"}}>
             {
                 selectedProduct ? (
                     <Card sx={{ maxWidth: 345, margin: "40px auto", padding: "20px 5px" }} >
@@ -86,7 +88,7 @@ const ProductDetail = ({addItemToCart}) => {
                 )
             }
         </Card>
-
+        </Container>
 
     );
 }

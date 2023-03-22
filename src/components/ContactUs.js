@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Typography  from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid'
@@ -47,7 +48,7 @@ const ContactUs = () => {
     }
 
     return (
-        <section style={{marginBottom:25}}>
+        <Container sx={{flexGrow:1}} >
             <Typography variant="h3" style={{marginTop:25}}>Contact Us</Typography>
             <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
                 <CardContent>
@@ -117,7 +118,7 @@ const ContactUs = () => {
                     </form>
                 </CardContent>
             </Card>
-        </section>
+        </Container>
     )
 }
 

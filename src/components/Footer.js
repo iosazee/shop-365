@@ -14,7 +14,7 @@ function Footer(){
         height: "auto",
         paddingTop: "1rem",
         paddingBottom: "1rem",
-        backgroundColor: "#f4f3f3"
+        backgroundColor: "#DCDCE5"
       }}
     >
       <Container maxWidth="lg">

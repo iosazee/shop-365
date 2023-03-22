@@ -110,11 +110,11 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
 
 
     return(
-        <AppBar position="sticky">
-            <Accordion expanded={searchExpand}>
+        <AppBar position="sticky" >
+            <Accordion expanded={searchExpand} sx={{backgroundColor: "#9D9DA2" }}>
                 <AccordionSummary>
                     <Container>
-                        <Toolbar disableGutters>
+                        <Toolbar disableGutters >
                             <Grid container spacing={0}>
 
                                 {/* Left Side Buttons */}

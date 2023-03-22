@@ -8,7 +8,7 @@ const FeaturedProductCard = ({ image, title, id }) => {
 
 
     return (
-        <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: "100%", borderRadius: 16 }}>
+        <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "center", height: "100%", borderRadius: 16}}>
             <LazyLoad height={400} offset={150} >
             <CardMedia
                 sx={{ height: 500, flexGrow: 1, objectFit:"contain", mt:{lg:4}, width: "90%"}}

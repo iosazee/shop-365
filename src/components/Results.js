@@ -6,7 +6,7 @@ function Results({products}){
     const totalResults = products.length;
 
     return(
-        <Container>
+        <Container sx={{my: 3, pt: 2, borderTop: "1px black solid"}}>
             <Typography>{totalResults} Results Returned</Typography>
         </Container>
     )

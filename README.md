@@ -1,11 +1,15 @@
 # SHOP-365
 ![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Description
 
-This is an ecommerce site that enables users to shop for their clothing, jewellery and electronic needs online. The app consists of a Navbar containing multiple links, company logo and a shopping cart icon. The Navbar also contains a search bar which allows users to carry out a search of products available on the site. Immediately below the Navbar, is the products page or homepage. In this section, users are able to see all the available products on offer. Each product contains two buttons, a add to cart button and a product detail button. Other sections of the app are the product detail page, the cart page, the order confirmation component and the contact us page. Also, there is a footer which contains links, addresses and social media links.
+## Overview
+
+This is a fullstack ecommerce application site  enables users to shop for their clothing, jewellery and electronic needs online. The tech stack for the frontend part of the application consists of ReactJS, Material UI and a host of other NPM packages. The backend is powered by supabase. This app allows users to carry out shopping online and allows authenticated and authorized managers to post new products to a protected url endpoint which serves as an admin dashboard.
+
 
 ## Table of Contents
+
+* [Description](#description)
 
 * [Usage](#usage)
 
@@ -20,6 +24,10 @@ This is an ecommerce site that enables users to shop for their clothing, jewelle
 * [Tests](#tests)
 
 * [Questions](#questions)
+
+## Description
+
+The app consists of a Navbar containing multiple links, company logo and a shopping cart icon. The Navbar also contains a search bar which allows users to carry out a search of products available on the site. Immediately below the Navbar, is the products page or homepage. In this section, users are able to see all the available products on offer. Each product contains two buttons, a add to cart button and a product detail button. Other sections of the app are the product detail page, the cart page, the order confirmation component and the contact us page. Also, there is a footer which contains links, addresses and social media links.
 
 ## Usage
 
@@ -37,6 +45,7 @@ The site is deployed at the following url https://shop-365.netlify.app/
 ## Technologies
 
 * REACT JS
+* SUPABASE
 * MATERIAL UI
 * REACT LAZY LOAD
 

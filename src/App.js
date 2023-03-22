@@ -11,6 +11,7 @@ import Faq from './components/Faq';
 import { supabase } from './supabaseClient';
 import './App.css';
 import FeaturedProduct from './components/FeaturedProduct';
+import Results from './components/Results';
 
 
 function App() {
@@ -117,11 +118,11 @@ function App() {
             deleteAllCartItems={deleteAllCartItems}
           />}
         />
-        <Route path='/products/search' element={<Products products={searchProducts} />} />
-        <Route path='/products/mens' element={<Products products={menProducts} />} />
-        <Route path='/products/womens' element={<Products products={womenProducts} />} />
-        <Route path='/products/jewelery' element={<Products products={jeweleryProducts} />} />
-        <Route path='/products/electronics' element={<Products products={electronicProducts} />}/>
+        <Route path='/products/search' element={<> <Products products={searchProducts} /> <Results products={searchProducts}/> </>} />
+        <Route path='/products/mens' element={<> <Products products={menProducts} /> <Results products={menProducts}/> </>} />
+        <Route path='/products/womens' element={<> <Products products={womenProducts} /> <Results products={womenProducts}/> </>} />
+        <Route path='/products/jewelery' element={<> <Products products={jeweleryProducts} /> <Results products={jeweleryProducts}/> </>} />
+        <Route path='/products/electronics' element={<> <Products products={electronicProducts} /> <Results products={electronicProducts}/> </>}/>
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<About />} />
         <Route path='/faq' element={<Faq />} />

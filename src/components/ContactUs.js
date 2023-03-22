@@ -48,76 +48,78 @@ const ContactUs = () => {
     }
 
     return (
-        <Container sx={{flexGrow:1}} >
-            <Typography variant="h3" style={{marginTop:25}}>Contact Us</Typography>
-            <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
-                <CardContent>
-                    <Typography gutterBottom >Fill up the form and we will get back to you within 48hrs</Typography>
-                    <form onSubmit={handleSubmit}>
-                        <Grid container spacing={1}>
-                            <Grid xs={12} sm={6} item>
-                                <TextField
-                                    label='First Name'
-                                    placeholder='Enter your first name'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="firstName"
-                                    value={contactInfo.firstName}
-                                    onChange={handleChange}
-                                />
+        <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}} >
+            <Container>
+                <Typography variant="h3" >Contact Us</Typography>
+                <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
+                    <CardContent>
+                        <Typography gutterBottom >Fill up the form and we will get back to you within 48hrs</Typography>
+                        <form onSubmit={handleSubmit}>
+                            <Grid container spacing={1}>
+                                <Grid xs={12} sm={6} item>
+                                    <TextField
+                                        label='First Name'
+                                        placeholder='Enter your first name'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="firstName"
+                                        value={contactInfo.firstName}
+                                        onChange={handleChange}
+                                    />
+                                </Grid>
+                                <Grid xs={12} sm={6} item>
+                                    <TextField
+                                        label='Last Name'
+                                        placeholder='Enter your last name'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="lastName"
+                                        value={contactInfo.lastName}
+                                        onChange={handleChange}
+                                    />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <TextField
+                                        label='Email'
+                                        type='email'
+                                        placeholder='Enter your email address'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="email"
+                                        value={contactInfo.email}
+                                        onChange={handleChange}
+                                    />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <TextField
+                                        label='Message'
+                                        placeholder='Type your message here'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="message"
+                                        value={contactInfo.message}
+                                        onChange={handleChange}
+                                        multiline
+                                        rows={4}
+                                    />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <Typography gutterBottom variant="body2" component="p" color="red">{formResponseMessage}</Typography>
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <Button variant="contained" color="primary" fullWidth type="submit" >
+                                        Submit
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid xs={12} sm={6} item>
-                                <TextField
-                                    label='Last Name'
-                                    placeholder='Enter your last name'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="lastName"
-                                    value={contactInfo.lastName}
-                                    onChange={handleChange}
-                                />
-                            </Grid>
-                            <Grid xs={12} item>
-                                <TextField
-                                    label='Email'
-                                    type='email'
-                                    placeholder='Enter your email address'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="email"
-                                    value={contactInfo.email}
-                                    onChange={handleChange}
-                                />
-                            </Grid>
-                            <Grid xs={12} item>
-                                <TextField
-                                    label='Message'
-                                    placeholder='Type your message here'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="message"
-                                    value={contactInfo.message}
-                                    onChange={handleChange}
-                                    multiline
-                                    rows={4}
-                                />
-                            </Grid>
-                            <Grid xs={12} item>
-                                <Typography gutterBottom variant="body2" component="p" color="red">{formResponseMessage}</Typography>
-                            </Grid>
-                            <Grid xs={12} item>
-                                <Button variant="contained" color="primary" fullWidth type="submit" >
-                                    Submit
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </form>
-                </CardContent>
-            </Card>
+                        </form>
+                    </CardContent>
+                </Card>
+            </Container>
         </Container>
     )
 }

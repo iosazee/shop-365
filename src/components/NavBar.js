@@ -22,7 +22,7 @@ import Badge from '@mui/material/Badge';
 import AccountIcon from '@mui/icons-material/AccountCircleRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SearchIcon from '@mui/icons-material/Search';
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/logored.svg';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

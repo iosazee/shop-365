@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import { Box, Container, Grid, Typography, Button} from "@mui/material";
-import Logo from '../assets/logo.svg';
+import Logo from '../assets/logored.svg';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';

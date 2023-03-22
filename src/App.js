@@ -119,8 +119,8 @@ function App() {
         <Route path='/products/search' element={<Products products={searchProducts} />} />
         <Route path='/products/mens' element={<> <Products products={menProducts} />  <About /> </> } />
         <Route path='/products/womens' element={<> <Products products={womenProducts} />  <About/>  </> } />
-        <Route path='/products/electronics' element={<Products products={electronicProducts} />} />
         <Route path='/products/jewelery' element={<Products products={jeweleryProducts} />} />
+        <Route path='/products/electronics' element={<><Products products={electronicProducts}/><About/></>}/>
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<About />} />
         <Route path='/faq' element={<Faq />} />

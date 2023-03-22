@@ -48,7 +48,7 @@ const ContactUs = () => {
     }
 
     return (
-        <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}} >
+        <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center", my:3}} >
             <Container>
                 <Typography variant="h3" sx={{textDecoration: "underline #ff0000 solid ", mb: 2, fontFamily: "Pacifico"}}>Contact Us</Typography>
                 <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >

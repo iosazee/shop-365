@@ -198,7 +198,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
                                         style={{ backgroundColor: 'transparent' }}
-                                        sx={{ my: 2, color: 'inherit', display: 'block' }}>
+                                        sx={{ my: 2, color: 'inherit', display: 'block'}}>
                                             Categories
                                         </Button>
                                         <Menu
@@ -239,7 +239,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                         </Menu>
                                     </Box>
                                     {/* Contact Us Button */}
-                                    <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }} sx={{display: { xs: 'none', md: 'flex' }}}>
+                                    <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent'}} sx={{display: { xs: 'none', md: 'flex' }}}>
                                         <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                                             Contact Us
                                         </Link>

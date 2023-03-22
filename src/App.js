@@ -8,9 +8,9 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import About from './components/About';
 import Faq from './components/Faq';
-import FeaturedProduct from './components/FeaturedProduct';
 import { supabase } from './supabaseClient';
 import './App.css';
+import FeaturedProduct from './components/FeaturedProduct';
 
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
         if (data) {
           setError(null)
           setProducts(data)
-          console.log(data)
+          // console.log(data)
         }
     }
 

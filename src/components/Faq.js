@@ -12,7 +12,7 @@ function Faq(){
 
     return(
         <Container sx={{flexGrow:1}}>
-            <Typography variant="h3" style={{marginTop:30}}>FAQs</Typography>
+            <Typography variant="h3" style={{marginTop:30, textDecoration: "underline #ff0000 solid", fontFamily: "Pacifico"}}>FAQs</Typography>
             <Paper elevation={3} sx={{my: 4}}>
                 {FAQ.map((faq) => {
                 return (

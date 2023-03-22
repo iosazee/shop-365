@@ -6,7 +6,7 @@ function About(){
     return(
         <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}}>
             <Container  sx={{my: 4}}>
-                <Typography variant="h3" sx={{mb: 5}}>About Us</Typography>
+                <Typography variant="h3" sx={{mb: 5, textDecoration: "underline #ff0000 solid ", fontFamily: "Pacifico"}}>About Us</Typography>
                 <Typography sx={{my: 1}}>
                     At Shop 365, we believe that everyone deserves access to high-quality products that enhance their lives. We are committed to providing a wide selection of goods, including men's and women's clothing, jewelry, and electronics, at affordable prices. Our mission is to make shopping easy, convenient, and enjoyable for all of our customers, while also providing exceptional customer service and fast shipping.
                 </Typography>

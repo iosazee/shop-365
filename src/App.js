@@ -46,7 +46,7 @@ function App() {
         if (data) {
           setError(null)
           setProducts(data)
-          console.log(data.map(item => item.category))
+          // console.log(data)
         }
     }
 

@@ -111,7 +111,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
 
     return(
         <AppBar position="sticky" >
-            <Accordion expanded={searchExpand} sx={{backgroundColor: "#9D9DA2" }}>
+            <Accordion expanded={searchExpand} sx={{backgroundColor: "white" }}>
                 <AccordionSummary>
                     <Container>
                         <Toolbar disableGutters >

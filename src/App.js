@@ -46,7 +46,7 @@ function App() {
         if (data) {
           setError(null)
           setProducts(data)
-          console.log(data)
+          console.log(data.map(item => item.category))
         }
     }
 
@@ -57,10 +57,11 @@ function App() {
   }, [])
 
 
-  const menProducts = products.filter(product => product.catecory === "men's clothing");
-  const womenProducts = products.filter(product => product.catecory === "women's clothing");
-  const electronicProducts = products.filter(product => product.catecory === "electronics");
-  const jeweleryProducts = products.filter(product => product.catecory === "jewelery");
+  const menProducts = products.filter(product => product.category === "men's clothing");
+  const womenProducts = products.filter(product => product.category === "women's clothing");
+  const electronicProducts = products.filter(product => product.category === "electronics");
+  const jeweleryProducts = products.filter(product => product.category === "Jewelery");
+  // console.log(jeweleryProducts)
 
   const addItemToCart = (itemToAdd) => {
     const itemIsInCart = cartItems.find((item) => item.id === itemToAdd.id)
@@ -119,7 +120,7 @@ function App() {
         <Route path='/products/search' element={<Products products={searchProducts} />} />
         <Route path='/products/mens' element={<> <Products products={menProducts} />  <About /> </> } />
         <Route path='/products/womens' element={<> <Products products={womenProducts} />  <About/>  </> } />
-        <Route path='/products/jewelery' element={<Products products={jeweleryProducts} />} />
+        <Route path='/products/jewelery' element={<> <Products products={jeweleryProducts}/> <About /> </> } />
         <Route path='/products/electronics' element={<><Products products={electronicProducts}/><About/></>}/>
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<About />} />

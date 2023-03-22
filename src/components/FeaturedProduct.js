@@ -33,7 +33,7 @@ const FeaturedProduct = ({ products }) => {
 
     return (
 
-        <Card sx={{ display: "flex", flexDirection: { md: "row", xs:"column" }, justifyContent: "space-evenly", height: 400, background: "#D1D1D1", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)", overflow: "hidden", objectFit:"cover", mb: 2 }}>
+        <Card sx={{ display: "flex", flexDirection: { md: "row", xs:"column" }, justifyContent: "space-evenly", height: 400, background: "#DAC7C7", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)", overflow: "hidden", objectFit:"cover", mb: 2 }}>
             <FeaturedProductCard image={image} title={title} id={id} />
             <CardContent sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
                 <Typography variant="h5" sx={{ fontSize: { xs: 32, md: 40 }, fontWeight: 700, color: "#011627", textAlign: "center" }}>

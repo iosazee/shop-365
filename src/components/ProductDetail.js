@@ -51,10 +51,10 @@ const ProductDetail = ({addItemToCart}) => {
 
     return (
         <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}}>
-            <Card elevation={0} sx={{background: "transparent"}}>
+            <Card elevation={0} sx={{background: "transparent", my:3}}>
                 {
                     selectedProduct ? (
-                        <Card variant="outlined" sx={{ padding: "20px 5px" }} >
+                        <Card sx={{padding: "20px 5px" }} >
                             <Grid container>  
                                 <Grid item xs={12} sm={6}>                        
                                     <LazyLoad height={350} offset={70} >
@@ -82,9 +82,9 @@ const ProductDetail = ({addItemToCart}) => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions sx={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
-                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct)} data-testid="add-to-cart" >Add to Cart</Button>
-                                        <Link to="/cart" style={{ textDecoration: "none" }} ><Button variant="contained" size="small" >View Cart</Button></Link>
-                                        <Link to="/" style={{ textDecoration: "none" }} ><Button variant="outlined"size="small" >Go back</Button></Link>
+                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct)} data-testid="add-to-cart" color='inherit'>Add to Cart</Button>
+                                        <Link to="/cart" style={{ textDecoration: "none", color: 'inherit' }} ><Button variant="contained" size="small" color='inherit'>View Cart</Button></Link>
+                                        <Link to="/" style={{ textDecoration: "none", color:'black' }} ><Button variant="contained" size="small" color='error'>Go back</Button></Link>
                                     </CardActions>
                                 </Grid>
                             </Grid>

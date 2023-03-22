@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { Card, Typography, CardActions, Button, Modal, Box, Container } from "@mui/material";
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CartItem from "./CartItem";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -40,78 +39,79 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
 
   return (
 
-    <Container sx={{flexGrow:1}}>
-      {
-        isPopUpOpen && (
-          <Modal open={isPopUpOpen} onClose={handlePopUp} >
-            <Box sx={modalStyle}>
-              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{textAlign:"center"}} >
-                Thank you for your order
-              </Typography>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Your Order Summary: {cartItems.map(item => {
-                  return <Typography key={item.id} sx={{my:1}} >
-                    {item.title}
-                  </Typography>
-                })}
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2, fontWeight:600 }}>
-                Total amount is £{calcTotalPrice()}
-              </Typography>
-              <Button onClick={confirmPurchase} sx={{textAlign:"center"}} variant="contained" >Confirm Purchase</Button>
-            </Box>
-          </Modal>
-        )
-      }
-
-      <Card sx={cardStyle}>
-        <Typography component="p">Item</Typography>
-        <Typography component="div" />
-        <Typography component="p">Price</Typography>
-        <Typography component="p">Quantity</Typography>
-        <Typography component="p">Remove</Typography>
+    <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}}>
+      <Container>
+        <Typography variant="h3" style={{marginTop:30, textDecoration: "underline #ff0000 solid", fontFamily: "Pacifico"}}>Cart</Typography>
         {
-          cartItems && cartItems.length > 0 ?
-            cartItems.map((item) => (
-              <CartItem
-                itemData={item}
-                key={item.id}
-                deleteCartItem={deleteCartItem}
-              />
-            )) : (
-              <Typography></Typography>
-            )
+          isPopUpOpen && (
+            <Modal open={isPopUpOpen} onClose={handlePopUp} >
+              <Box sx={modalStyle}>
+                <Typography id="modal-modal-title" variant="h6" component="h2" sx={{textAlign:"center"}} >
+                  Thank you for your order
+                </Typography>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Your Order Summary: {cartItems.map(item => {
+                    return <Typography key={item.id} sx={{my:1}} >
+                      {item.title}
+                    </Typography>
+                  })}
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2, fontWeight:600 }}>
+                  Total amount is £{calcTotalPrice()}
+                </Typography>
+                <Button onClick={confirmPurchase} sx={{textAlign:"center"}} variant="contained" >Confirm Purchase</Button>
+              </Box>
+            </Modal>
+          )
         }
-        {
-          cartItems && cartItems.length > 0 &&
-          <>
-            Total: {calcTotalPrice()}
-            <CardActions>
-              <Button
-                size="small"
-                sx={checkoutbtnStyle}
-                onClick={handlePopUp}
-                variant="contained"
-              >
-                checkout
-              </Button>
+
+        <Card sx={cardStyle}>
+          <Typography component="p">Item</Typography>
+          <Typography component="div" />
+          <Typography component="p">Price</Typography>
+          <Typography component="p">Quantity</Typography>
+          <Typography component="p">Remove</Typography>
+          {
+            cartItems && cartItems.length > 0 ?
+              cartItems.map((item) => (
+                <CartItem
+                  itemData={item}
+                  key={item.id}
+                  deleteCartItem={deleteCartItem}
+                />
+              )) : (
+                <Typography></Typography>
+              )
+          }
+          {
+            cartItems && cartItems.length > 0 &&
+            <>
+              Total: {calcTotalPrice()}
+              <CardActions>
+                <Button
+                  size="medium"
+                  sx={checkoutbtnStyle}
+                  onClick={handlePopUp}
+                  variant="contained"
+                  color='inherit'
+                >
+                  checkout
+                </Button>
+              </CardActions>
+            </>
+          }
+          {
+            cartItems && cartItems.length === 0 &&
+            <CardActions sx={{display: 'flex', justifyContent: "center"}}>
+              <Typography>Your cart is empty!</Typography>
+              <RemoveShoppingCartIcon />
             </CardActions>
-          </>
-        }
-        {
-          cartItems && cartItems.length === 0 &&
-          <CardActions>
-            <Typography>Your cart is empty!</Typography>
-            <RemoveShoppingCartIcon />
-            <Link to="/" >
-              <ArrowBackIcon
-                style={{ marginLeft: "100px", marginTop: "100px" }}
-              />
-            </Link>
-          </CardActions>
-        }
-      </Card>
-
+          }
+        </Card>
+        <Link to="/" style={{ textDecoration: "none", color:'black'}} >
+          <Button variant="contained" size="medium" color='error' sx={{ mb: 3 }}>Go back</Button>
+        </Link>
+      </Container>
     </Container>
   )
 }
@@ -140,9 +140,8 @@ const cardStyle = {
   gap: {lg:"30px", md: "20px", xs:"5px"},
   maxWidth: {lg:"800px", md: "600px", xs:"400px"},
   padding: "40px",
-  margin: "100px auto",
-  borderBottom: "2px solid #D9D9D9",
-  backgroundColor: "aquamarine"
+  margin: " 25px auto",
+  borderBottom: "2px solid #D9D9D9"
 }
 
 

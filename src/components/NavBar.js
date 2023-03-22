@@ -264,7 +264,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                     </Button>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                                             <IconButton>
-                                                <Badge badgeContent={cartCount} color="primary" showZero data-testid="cart-count" >
+                                                <Badge badgeContent={cartCount} color="error" showZero data-testid="cart-count" >
                                                     <ShoppingCartIcon color='action' />
                                                 </Badge>
                                             </IconButton>

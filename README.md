@@ -62,8 +62,7 @@ This project was built by
 
 We worked in an agile manner to deliver this project over a sprint of ten days. At the very outset, we held a team meeting to decide what we wanted to build. In that meeting we also decided what features we would like our app to have and their prorities. We defined what the minimum viable product(MVP) will be. In Over the cousrse of the sprint we held daily standups always of no more than fifteen minutes where we were guided by three questions, where we are at the moment, where we would like to be and any blockers, if any was preventing us from reaching where we ought to be(if we haven't reached there yet). We also divided the work amongst ourseves and to keep track of our progress we made effective use of github's project management tools like the Kanban board where every member of the team could see at a glance the state of the project.
 <div display="flex" align="center" >
-<img src="./src/assets/kanban_board.png"  width="350"  />
-<img src="./src/assets/kanban_board1.png" width="350" />
+<img src="./src/assets/kanban-board.png"  width="350"  />
 </div>
 
 We also used charts to track the status of our work.

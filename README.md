@@ -109,8 +109,18 @@ A user journey through our app:
         <div>
             <img src="./src/assets/shot8.png" width="250"  />
             <img src="./src/assets/shot9.png" width="250"  />
+             <img src="./src/assets/shot10.png" width="250"  />
         </div>
-        <p>FAQs and Contact Us Sections</p>
+        <p>FAQs, Contact Us and LogIn Sections</p>
+        <!-- <p>Please note the Login section is not fully implemented yet.</p> -->
+    </div>
+     <div display="flex" flex-direction="column">
+        <div>
+            <img src="./src/assets/db-1.png" width="250"  />
+            <img src="./src/assets/db-2.png" width="250" height="250" />
+             <img src="./src/assets/db-3.png" width="250" height="250" />
+        </div>
+        <p>The Products Table atthe Supabase Backend</p>
         </div>
     </div>
 </div>

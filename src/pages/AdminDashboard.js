@@ -42,8 +42,9 @@ const AdminDashboard = () => {
   return (
     <Card  style={{maxWidth: 850, margin:"0 auto", padding:"30px 10px"}}>
     <Box sx={{ p: 2 }}>
+      <Typography variant="h5" sx={{ mb: 2 }}>Admins Only</Typography>
       <Typography variant="h5" sx={{ mb: 2 }}>
-        Admin Dashboard
+        Use the form below to add a new product to the database
       </Typography>
       <Box component="form" onSubmit={handleFormSubmit}>
         <TextField

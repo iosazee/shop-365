@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { useParams, Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+import { supabase } from '../supabaseClient';
 
 
 
@@ -30,19 +31,43 @@ const ProductDetail = ({addItemToCart}) => {
         fetch(`https://fakestoreapi.com/products/${id}`)
             .then(resp => resp.json())
             .then(resp => {
-                // console.log(resp)
+                console.log(resp)
                 setSelectedProduct(resp)
             })
             .catch((error) => console.error(error))
     }
 
+
+    // useEffect(() => {
+    //     const fetchProduct = async () => {
+    //         const {data, error} = await supabase
+    //             .from('products')
+    //             .select('*')
+    //             .eq('id', id)
+    //             .limit(1)
+
+    //         if (error) {
+    //             console.error("Error fetching product", error.message)
+    //         }
+
+    //         if (data) {
+    //             console.error(null)
+    //             setSelectedProduct(data)
+    //             console.log(data)
+    //         }
+    //     }
+
+    //     fetchProduct()
+    // }, [id])
+
+
     const getRatingStars = (rating) => {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= Math.floor(rating)) {
-                stars.push(<StarIcon key={i} style={{color:"yellow"}} />);
+                stars.push(<StarIcon key={i} style={{ color: "yellow" }} />);
             } else {
-                stars.push(<StarBorderIcon key={i} style={{color:"yellow"}} />);
+                stars.push(<StarBorderIcon key={i} style={{ color: "yellow" }} />);
             }
         }
         return stars;
@@ -55,8 +80,8 @@ const ProductDetail = ({addItemToCart}) => {
                 {
                     selectedProduct ? (
                         <Card sx={{padding: "20px 5px" }} >
-                            <Grid container>  
-                                <Grid item xs={12} sm={6}>                        
+                            <Grid container> 
+                                <Grid item xs={12} sm={6}>
                                     <LazyLoad height={350} offset={70} >
                                         <CardMedia
                                             sx={{ height: "100%", objectFit: "contain" }}
@@ -99,3 +124,4 @@ const ProductDetail = ({addItemToCart}) => {
 }
 
 export default ProductDetail;
+

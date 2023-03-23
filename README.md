@@ -135,7 +135,7 @@ Run the command "npm run test" to run the tests which test for behavior of diffe
 
 ## Questions
 
-If you have any questions you can contact us via email at [Zee](iosazee1@gmail.com), [Alex](alex.ainslie99@gmail.com) and [Mike](Mike@originet.co.uk)
+If you have any questions you can contact us via email at Zee: iosazee1@gmail.com, Alex: alex.ainslie99@gmail.com and Mike:Mike@originet.co.uk.
 
 You can see more of our work on our github profiles [Alex](https://github.com/AlexAins), [Mike](https://github.com/welsh-bloke) and [Zee](https://github.com/iosazee).
 

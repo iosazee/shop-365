@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const FeaturedProduct = ({ products }) => {
 
-    const [randomNumber, setRandomNumber] = useState(7)
+    const [randomNumber, setRandomNumber] = useState(11)
 
     const generateRandomNumber = () => {
         const min = 1;

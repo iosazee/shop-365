@@ -191,7 +191,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                                 </Link>
                                             </MenuItem>
                                             <MenuItem key="profile" onClick={handleCloseNavMenu}>
-                                                <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
+                                                <Link to="/admin" style={{color: 'inherit', textDecoration: 'none' }}>
                                                     <Typography textAlign="center">Profile</Typography>
                                                 </Link>
                                             </MenuItem>

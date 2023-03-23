@@ -82,11 +82,37 @@ One of our very first task was to design our application wireframe so that we co
 ## Screenshots
 
 A user journey through our app:
-<div>
-<div>
- <p>Home Screen</p>
- <img src="./src/assets/wireframe3.png" width="250"  />
- </div>
+<div align="center">
+    <div display="flex">
+        <div display="flex" flex-direction="column">
+            <img src="./src/assets/shot1.png" width="250"  />
+            <p>NAVBAR AND FEATURED PRODUCT</p>
+        </div>
+    <div display="flex" flex-direction="column">
+        <div>
+            <img src="./src/assets/shot2.png" width="250"  />
+            <img src="./src/assets/shot4.png" width="250"  />
+            <img src="./src/assets/shot3.png" width="250"  />
+        </div>
+        <p>Products Section and Footer</p>
+        </div>
+    </div>
+    <div display="flex" flex-direction="column">
+        <div>
+            <img src="./src/assets/shot5.png" width="250"  />
+            <img src="./src/assets/shot6.png" width="250"  />
+            <img src="./src/assets/shot7.png" width="250"  />
+        </div>
+        <p>Product Detail. Cart, and Order Confirmation Popup Sections</p>
+    </div>
+    <div display="flex" flex-direction="column">
+        <div>
+            <img src="./src/assets/shot8.png" width="250"  />
+            <img src="./src/assets/shot9.png" width="250"  />
+        </div>
+        <p>FAQs and Contact Us Sections</p>
+        </div>
+    </div>
 </div>
 
 

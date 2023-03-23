@@ -18,20 +18,20 @@ const LoginForm = () => {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-    
+
         // Authenticate user
         const { error } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
-    
+
         if (error) {
           console.error("Error signing in:", error.message);
         } else {
           navigate("/admin/dashboard");
         }
       };
-     
+
 
     return (
         <section style={{marginBottom:25}}>
@@ -86,14 +86,12 @@ const LogoutButton = () => {
     const handleLogout = async () => {
         // Log out user
         await supabase.auth.signOut();
-    
         navigate("/");
       };
 
     return (
       <Button  onClick={handleLogout} >Logout</Button>
     )
-    
 }
 
 

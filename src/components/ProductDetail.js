@@ -55,8 +55,8 @@ const ProductDetail = ({addItemToCart}) => {
                 {
                     selectedProduct ? (
                         <Card sx={{padding: "20px 5px" }} >
-                            <Grid container>  
-                                <Grid item xs={12} sm={6}>                        
+                            <Grid container>
+                                <Grid item xs={12} sm={6}>
                                     <LazyLoad height={350} offset={70} >
                                         <CardMedia
                                             sx={{ height: "100%", objectFit: "contain" }}

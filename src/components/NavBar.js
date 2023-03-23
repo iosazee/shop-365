@@ -19,7 +19,7 @@ import {AppBar,
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import AccountIcon from '@mui/icons-material/AccountCircleRounded';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../assets/logo.svg';
@@ -109,6 +109,10 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
         toggleAccordion()
         navigate("/products/search")
     }
+
+    const handleAdminClick = () => {
+        navigate('/admin');
+      };
 
 
     return(
@@ -258,8 +262,8 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                 {/* Right side icons */}
                                 <Grid item xs={4} sx={{display:'flex', alignItems:'center', justifyContent:'flex-end'}}>
                                     <Button sx={{display: { xs: 'none', md: 'flex' } }} style={{ backgroundColor: 'transparent', color: 'inherit', textDecoration: 'none'}}>
-                                        <Link to="/profile" style={{color: 'inherit', textDecoration: 'none' }}>
-                                            <AccountIcon/>
+                                        <Link to="/admin" style={{color: 'inherit', textDecoration: 'none' }}>
+                                            <AdminPanelSettingsIcon onClick={handleAdminClick} />
                                         </Link>
                                     </Button>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>

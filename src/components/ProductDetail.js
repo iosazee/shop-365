@@ -80,11 +80,7 @@ const ProductDetail = ({addItemToCart}) => {
                 {
                     selectedProduct ? (
                         <Card sx={{padding: "20px 5px" }} >
-
-  
-
                             <Grid container> 
-
                                 <Grid item xs={12} sm={6}>
                                     <LazyLoad height={350} offset={70} >
                                         <CardMedia
@@ -110,7 +106,7 @@ const ProductDetail = ({addItemToCart}) => {
                                             {selectedProduct && getRatingStars(selectedProduct[0].rating)}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                                    <CardActions sx={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
                                         <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct[0])} data-testid="add-to-cart" color='inherit' sx={{mr:12 }} >Add to Cart</Button>
                                         <Link to="/cart" style={{ textDecoration: "none", color: 'inherit' }} ><Button variant="contained" size="small" color='inherit'>View Cart</Button></Link>
                                     </CardActions>

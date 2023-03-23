@@ -49,6 +49,7 @@ The site is deployed at the following url https://shop-365.netlify.app/
 * SUPABASE
 * MATERIAL UI
 * REACT LAZY LOAD
+* REACT ROUTER DOM 
 
 ## License
 

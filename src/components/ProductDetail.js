@@ -53,7 +53,7 @@ const ProductDetail = ({addItemToCart}) => {
             if (data) {
                 // console.error(null)
                 setSelectedProduct(data)
-                console.log(data)
+                // console.log(data)
             }
         }
 

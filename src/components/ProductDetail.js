@@ -51,7 +51,7 @@ const ProductDetail = ({addItemToCart}) => {
             }
 
             if (data) {
-                console.error(null)
+                // console.error(null)
                 setSelectedProduct(data)
                 console.log(data)
             }
@@ -106,13 +106,17 @@ const ProductDetail = ({addItemToCart}) => {
                                             {selectedProduct && getRatingStars(selectedProduct[0].rating)}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions sx={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
-                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct)} data-testid="add-to-cart" color='inherit'>Add to Cart</Button>
+                                    <CardActions sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct[0])} data-testid="add-to-cart" color='inherit' sx={{mr:12 }} >Add to Cart</Button>
                                         <Link to="/cart" style={{ textDecoration: "none", color: 'inherit' }} ><Button variant="contained" size="small" color='inherit'>View Cart</Button></Link>
-                                        <Link to="/" style={{ textDecoration: "none", color:'black' }} ><Button variant="contained" size="small" color='error'>Go back</Button></Link>
                                     </CardActions>
                                 </Grid>
                             </Grid>
+                            <Card>
+                                <Link to="/" style={{ textDecoration: "none", color:'black' }} >
+                                    <Button variant="contained" size="small" color='error'>Go back</Button>
+                                </Link>
+                            </Card>
                         </Card>
                     ) : (
                         <Typography>Loading...</Typography>

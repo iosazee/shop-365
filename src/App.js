@@ -12,7 +12,9 @@ import { supabase } from './supabaseClient';
 import './App.css';
 import FeaturedProduct from './components/FeaturedProduct';
 import Results from './components/Results';
-import AdminDashboard from './pages/AdminDashboard.js';
+import AdminPage from './pages/AdminPage';
+import LoginLogoutPage from './pages/LoginLogout';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 function App() {
@@ -127,7 +129,9 @@ function App() {
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/about' element={<About />} />
         <Route path='/faq' element={<Faq />} />
-        <Route path='/admin' element={<AdminDashboard />} />
+        <Route path='/admin' element={<AdminPage />} />
+        <Route path='/admin/login' element={<LoginLogoutPage />} />
+        <Route path='/admin/dashboard' element={<AdminDashboard />} />
         <Route path="*" element={<Navigate to='/' replace />} />
       </Routes>
       <Footer />

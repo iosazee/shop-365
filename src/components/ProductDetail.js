@@ -11,6 +11,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { useParams, Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+import { supabase } from '../supabaseClient';
 
 
 
@@ -20,29 +21,53 @@ const ProductDetail = ({addItemToCart}) => {
     let {id} = useParams()
 
 
+    // useEffect(() => {
+    //     fetchProduct()
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
+
+
+    // const fetchProduct = () => {
+    //     fetch(`https://fakestoreapi.com/products/${id}`)
+    //         .then(resp => resp.json())
+    //         .then(resp => {
+    //             console.log(resp)
+    //             setSelectedProduct(resp)
+    //         })
+    //         .catch((error) => console.error(error))
+    // }
+
+
     useEffect(() => {
+        const fetchProduct = async () => {
+            const {data, error} = await supabase
+                .from('products')
+                .select('*')
+                .eq('id', id)
+                .limit(1)
+
+            if (error) {
+                console.error("Error fetching product", error.message)
+            }
+
+            if (data) {
+                // console.error(null)
+                setSelectedProduct(data)
+                console.log(data)
+            }
+        }
+
         fetchProduct()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [id])
 
-
-    const fetchProduct = () => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(resp => resp.json())
-            .then(resp => {
-                // console.log(resp)
-                setSelectedProduct(resp)
-            })
-            .catch((error) => console.error(error))
-    }
 
     const getRatingStars = (rating) => {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= Math.floor(rating)) {
-                stars.push(<StarIcon key={i} style={{color:"yellow"}} />);
+                stars.push(<StarIcon key={i} style={{ color: "yellow" }} />);
             } else {
-                stars.push(<StarBorderIcon key={i} style={{color:"yellow"}} />);
+                stars.push(<StarBorderIcon key={i} style={{ color: "yellow" }} />);
             }
         }
         return stars;
@@ -55,39 +80,47 @@ const ProductDetail = ({addItemToCart}) => {
                 {
                     selectedProduct ? (
                         <Card sx={{padding: "20px 5px" }} >
-                            <Grid container>
+
+  
+
+                            <Grid container> 
+
                                 <Grid item xs={12} sm={6}>
                                     <LazyLoad height={350} offset={70} >
                                         <CardMedia
                                             sx={{ height: "100%", objectFit: "contain" }}
                                             component="img"
-                                            image={selectedProduct.image}
-                                            title={selectedProduct.title}
+                                            image={selectedProduct[0].image}
+                                            title={selectedProduct[0].title}
                                         />
                                     </LazyLoad>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            {selectedProduct.title}
+                                            {selectedProduct[0].title}
                                         </Typography>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            {selectedProduct.price}
+                                            {selectedProduct[0].price}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {selectedProduct.description}
+                                            {selectedProduct[0].description}
                                         </Typography>
                                         <Typography variant="body2" style={{backgroundColor:"#394150", color:"#fff", borderRadius: "8px"}} component="div" my={2} > <Typography>Rating:</Typography>
-                                            {selectedProduct.rating && getRatingStars(selectedProduct.rating.rate)}
+                                            {selectedProduct && getRatingStars(selectedProduct[0].rating)}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions sx={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>
-                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct)} data-testid="add-to-cart" color='inherit'>Add to Cart</Button>
+                                    <CardActions sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                                        <Button variant="contained" size="small" onClick={() => addItemToCart(selectedProduct[0])} data-testid="add-to-cart" color='inherit' sx={{mr:12 }} >Add to Cart</Button>
                                         <Link to="/cart" style={{ textDecoration: "none", color: 'inherit' }} ><Button variant="contained" size="small" color='inherit'>View Cart</Button></Link>
-                                        <Link to="/" style={{ textDecoration: "none", color:'black' }} ><Button variant="contained" size="small" color='error'>Go back</Button></Link>
                                     </CardActions>
                                 </Grid>
                             </Grid>
+                            <Card>
+                                <Link to="/" style={{ textDecoration: "none", color:'black' }} >
+                                    <Button variant="contained" size="small" color='error'>Go back</Button>
+                                </Link>
+                            </Card>
                         </Card>
                     ) : (
                         <Typography>Loading...</Typography>
@@ -99,3 +132,4 @@ const ProductDetail = ({addItemToCart}) => {
 }
 
 export default ProductDetail;
+

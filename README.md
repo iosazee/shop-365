@@ -20,6 +20,8 @@ This is a fullstack ecommerce application site  enables users to shop for their 
 
 * [Collaborators](#collaborators)
 
+* [Screenshots](#screenshots)
+
 * [Tests](#tests)
 
 * [Questions](#questions)
@@ -76,6 +78,17 @@ One of our very first task was to design our application wireframe so that we co
 <img src="./src/assets/wireframe2.png" width="250"  />
 <img src="./src/assets/wireframe3.png" width="250"  />
 </div>
+
+## Screenshots
+
+A user journey through our app:
+<div>
+<div>
+ <p>Home Screen</p>
+ <img src="./src/assets/wireframe3.png" width="250"  />
+ </div>
+</div>
+
 
 ## Tests
 

@@ -50,14 +50,10 @@ function App() {
         if (data) {
           setError(null)
           setProducts(data)
-          // console.log(data)
         }
     }
 
     fetchProducts()
-    // fetch('https://fakestoreapi.com/products')
-    //   .then(res => res.json())
-    //   .then(data => setProducts(data))
   }, [])
 
 
@@ -65,7 +61,6 @@ function App() {
   const womenProducts = products.filter(product => product.category === "women's clothing");
   const electronicProducts = products.filter(product => product.category === "electronics");
   const jeweleryProducts = products.filter(product => product.category === "Jewelery");
-  // console.log(jeweleryProducts)
 
   const addItemToCart = (itemToAdd) => {
     const itemIsInCart = cartItems.find((item) => item.id === itemToAdd.id)

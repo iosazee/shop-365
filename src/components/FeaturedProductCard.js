@@ -4,7 +4,7 @@ import LazyLoad from "react-lazy-load";
 
 
 
-const FeaturedProductCard = ({ image, title, id }) => {
+const FeaturedProductCard = ({ image, title }) => {
 
 
     return (
@@ -18,7 +18,7 @@ const FeaturedProductCard = ({ image, title, id }) => {
             />
             </LazyLoad>
             <CardContent sx={{ flexGrow: 0, backgroundColor: "#f0f8ffe7" }}>
-                <Typography variant="h6" sx={{ fontSize: 18, fontWeight: 700, mb: 2 }}>
+                <Typography variant="h6" sx={{ fontSize: 18, fontWeight: 700, mb: 2, }}>
                     {title}
                 </Typography>
             </CardContent>

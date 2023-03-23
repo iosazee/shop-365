@@ -4,7 +4,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 
@@ -34,48 +35,50 @@ const LoginForm = () => {
 
 
     return (
-        <section style={{marginBottom:25}}>
-            <Typography variant="h3" style={{marginTop:25}}>Login</Typography>
-            <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
-                <CardContent>
-                    <form onSubmit={handleLogin} >
-                        <Grid container spacing={1}>
-                            <Grid xs={12} item>
-                                <TextField
-                                    label='Email'
-                                    type='email'
-                                    placeholder='Enter your email address'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="email"
-                                    value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
-                                />
+        <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Container>
+                <Typography variant="h3" style={{marginTop:25}}>Login</Typography>
+                <Card style={{ maxWidth:450, margin:"0 auto", padding:"20px 5px" }} >
+                    <CardContent>
+                        <form onSubmit={handleLogin} >
+                            <Grid container spacing={1}>
+                                <Grid xs={12} item>
+                                    <TextField
+                                        label='Email'
+                                        type='email'
+                                        placeholder='Enter your email address'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="email"
+                                        value={email}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                    />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <TextField
+                                        label='Password'
+                                        type="password"
+                                        placeholder='Type your password here'
+                                        variant="outlined"
+                                        fullWidth
+                                        required
+                                        name="password"
+                                        value={password}
+                                        onChange={(event) => setPassword(event.target.value)}
+                                    />
+                                </Grid>
+                                <Grid xs={12} item>
+                                    <Button variant="contained" color="primary" fullWidth type="submit"  >
+                                        Login
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid xs={12} item>
-                                <TextField
-                                    label='Password'
-                                    type="password"
-                                    placeholder='Type your password here'
-                                    variant="outlined"
-                                    fullWidth
-                                    required
-                                    name="password"
-                                    value={password}
-                                    onChange={(event) => setPassword(event.target.value)}
-                                />
-                            </Grid>
-                            <Grid xs={12} item>
-                                <Button variant="contained" color="primary" fullWidth type="submit"  >
-                                    Login
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </form>
-                </CardContent>
-            </Card>
-        </section>
+                        </form>
+                    </CardContent>
+                </Card>
+            </Container>
+        </Container>
     )
 }
 
@@ -99,7 +102,8 @@ const LoginLogoutPage = () => {
     const {user} = supabase.auth.getSession()
 
     return (
-        <section>
+        <Container sx={{flexGrow:1, display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <Container>
             {
                 user ? (
                     <>
@@ -114,7 +118,8 @@ const LoginLogoutPage = () => {
                 )
 
             }
-        </section>
+            </Container>
+        </Container>
     )
 }
 

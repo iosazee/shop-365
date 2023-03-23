@@ -121,7 +121,7 @@ A user journey through our app:
             <img src="./src/assets/db-2.png" width="250" height="250" />
              <img src="./src/assets/db-3.png" width="250" height="250" />
         </div>
-        <p>The Products Table atthe Supabase Backend</p>
+        <p>The Products Table at the Supabase Backend</p>
         </div>
     </div>
 </div>

@@ -21,44 +21,44 @@ const ProductDetail = ({addItemToCart}) => {
     let {id} = useParams()
 
 
-    useEffect(() => {
-        fetchProduct()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-
-    const fetchProduct = () => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(resp => resp.json())
-            .then(resp => {
-                console.log(resp)
-                setSelectedProduct(resp)
-            })
-            .catch((error) => console.error(error))
-    }
-
-
     // useEffect(() => {
-    //     const fetchProduct = async () => {
-    //         const {data, error} = await supabase
-    //             .from('products')
-    //             .select('*')
-    //             .eq('id', id)
-    //             .limit(1)
-
-    //         if (error) {
-    //             console.error("Error fetching product", error.message)
-    //         }
-
-    //         if (data) {
-    //             console.error(null)
-    //             setSelectedProduct(data)
-    //             console.log(data)
-    //         }
-    //     }
-
     //     fetchProduct()
-    // }, [id])
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
+
+
+    // const fetchProduct = () => {
+    //     fetch(`https://fakestoreapi.com/products/${id}`)
+    //         .then(resp => resp.json())
+    //         .then(resp => {
+    //             console.log(resp)
+    //             setSelectedProduct(resp)
+    //         })
+    //         .catch((error) => console.error(error))
+    // }
+
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const {data, error} = await supabase
+                .from('products')
+                .select('*')
+                .eq('id', id)
+                .limit(1)
+
+            if (error) {
+                console.error("Error fetching product", error.message)
+            }
+
+            if (data) {
+                console.error(null)
+                setSelectedProduct(data)
+                console.log(data)
+            }
+        }
+
+        fetchProduct()
+    }, [id])
 
 
     const getRatingStars = (rating) => {
@@ -86,24 +86,24 @@ const ProductDetail = ({addItemToCart}) => {
                                         <CardMedia
                                             sx={{ height: "100%", objectFit: "contain" }}
                                             component="img"
-                                            image={selectedProduct.image}
-                                            title={selectedProduct.title}
+                                            image={selectedProduct[0].image}
+                                            title={selectedProduct[0].title}
                                         />
                                     </LazyLoad>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            {selectedProduct.title}
+                                            {selectedProduct[0].title}
                                         </Typography>
                                         <Typography gutterBottom variant="h5" component="div">
-                                            {selectedProduct.price}
+                                            {selectedProduct[0].price}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            {selectedProduct.description}
+                                            {selectedProduct[0].description}
                                         </Typography>
                                         <Typography variant="body2" style={{backgroundColor:"#394150", color:"#fff", borderRadius: "8px"}} component="div" my={2} > <Typography>Rating:</Typography>
-                                            {selectedProduct.rating && getRatingStars(selectedProduct.rating.rate)}
+                                            {selectedProduct && getRatingStars(selectedProduct[0].rating)}
                                         </Typography>
                                     </CardContent>
                                     <CardActions sx={{display: "flex", justifyContent: "space-evenly", alignItems: "center"}}>

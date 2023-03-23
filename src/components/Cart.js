@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Card, Typography, CardActions, Button, Modal, Box, Container } from "@mui/material";
+import { Card, Typography, CardActions, Button, Modal, Box, Container, Grid } from "@mui/material";
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import CartItem from "./CartItem";
 import { useNavigate, Link } from "react-router-dom";
@@ -66,11 +66,6 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
         }
 
         <Card sx={cardStyle}>
-          <Typography component="p">Item</Typography>
-          <Typography component="div" />
-          <Typography component="p">Price</Typography>
-          <Typography component="p">Quantity</Typography>
-          <Typography component="p">Remove</Typography>
           {
             cartItems && cartItems.length > 0 ?
               cartItems.map((item) => (
@@ -86,18 +81,24 @@ const Cart = ({cartItems, deleteCartItem, deleteAllCartItems}) => {
           {
             cartItems && cartItems.length > 0 &&
             <>
-              Total: {calcTotalPrice()}
-              <CardActions>
-                <Button
-                  size="medium"
-                  sx={checkoutbtnStyle}
-                  onClick={handlePopUp}
-                  variant="contained"
-                  color='inherit'
-                >
-                  checkout
-                </Button>
-              </CardActions>
+              <Grid container>
+                <Grid item xs={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  Total: {calcTotalPrice()}
+                </Grid>
+                <Grid item xs={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <CardActions>
+                    <Button
+                      size="medium"
+                      sx={checkoutbtnStyle}
+                      onClick={handlePopUp}
+                      variant="contained"
+                      color='inherit'
+                    >
+                      checkout
+                    </Button>
+                  </CardActions>
+                </Grid>
+              </Grid>
             </>
           }
           {
@@ -134,7 +135,6 @@ const modalStyle = {
 
 const cardStyle = {
   display: "grid",
-  gridTemplateColumns: {lg: "120px 120px auto auto auto", xs: "65px 65px auto auto auto"},
   alignItems: "center",
   textAlign: "center",
   gap: {lg:"30px", md: "20px", xs:"5px"},

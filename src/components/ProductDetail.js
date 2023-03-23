@@ -20,24 +20,6 @@ const ProductDetail = ({addItemToCart}) => {
     const [selectedProduct, setSelectedProduct] = useState(null)
     let {id} = useParams()
 
-
-    // useEffect(() => {
-    //     fetchProduct()
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [])
-
-
-    // const fetchProduct = () => {
-    //     fetch(`https://fakestoreapi.com/products/${id}`)
-    //         .then(resp => resp.json())
-    //         .then(resp => {
-    //             console.log(resp)
-    //             setSelectedProduct(resp)
-    //         })
-    //         .catch((error) => console.error(error))
-    // }
-
-
     useEffect(() => {
         const fetchProduct = async () => {
             const {data, error} = await supabase
@@ -112,16 +94,14 @@ const ProductDetail = ({addItemToCart}) => {
                                     </CardActions>
                                 </Grid>
                             </Grid>
-                            <Card>
-                                <Link to="/" style={{ textDecoration: "none", color:'black' }} >
-                                    <Button variant="contained" size="small" color='error'>Go back</Button>
-                                </Link>
-                            </Card>
                         </Card>
                     ) : (
                         <Typography>Loading...</Typography>
                     )
                 }
+                <Link to="/" style={{ textDecoration: "none", color:'black'}} >
+                    <Button variant="contained" size="medium" color='error' sx={{ mt: 3 }}>Go back</Button>
+                </Link>
             </Card>
         </Container>
     );

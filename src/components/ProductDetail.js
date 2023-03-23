@@ -112,16 +112,14 @@ const ProductDetail = ({addItemToCart}) => {
                                     </CardActions>
                                 </Grid>
                             </Grid>
-                            <Card>
-                                <Link to="/" style={{ textDecoration: "none", color:'black' }} >
-                                    <Button variant="contained" size="small" color='error'>Go back</Button>
-                                </Link>
-                            </Card>
                         </Card>
                     ) : (
                         <Typography>Loading...</Typography>
                     )
                 }
+                <Link to="/" style={{ textDecoration: "none", color:'black'}} >
+                    <Button variant="contained" size="medium" color='error' sx={{ mt: 3 }}>Go back</Button>
+                </Link>
             </Card>
         </Container>
     );

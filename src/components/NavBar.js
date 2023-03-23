@@ -42,7 +42,9 @@ const Search = styled('div')(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
-    backgroundColor: "#00ff335e",
+    borderRadius: '5px',
+    marginRight: '5px',
+    backgroundColor: "#E4E4E4",
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
@@ -84,7 +86,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
     }
 
     // Category Accordion
-    const [expanded, setExpanded] = useState('panel1');
+    const [expanded, setExpanded] = useState('panel');
 
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
@@ -110,11 +112,11 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
 
 
     return(
-        <AppBar position="sticky">
-            <Accordion expanded={searchExpand}>
+        <AppBar position="sticky" >
+            <Accordion expanded={searchExpand} sx={{backgroundColor: "white" }}>
                 <AccordionSummary>
                     <Container>
-                        <Toolbar disableGutters>
+                        <Toolbar disableGutters >
                             <Grid container spacing={0}>
 
                                 {/* Left Side Buttons */}
@@ -151,7 +153,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                                 display: { xs: 'block', md: 'none' },
                                             }}
                                         >
-                                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} elevation={0} disableGutters={true}>
                                                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                                                     <Typography>Categories</Typography>
                                                 </AccordionSummary>
@@ -196,7 +198,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                     <Box sx={{display: { xs: 'none', md: 'flex' } }}>
                                         <Button onClick={handleOpenCategoryMenu}
                                         style={{ backgroundColor: 'transparent' }}
-                                        sx={{ my: 2, color: 'inherit', display: 'block' }}>
+                                        sx={{ my: 2, color: 'inherit', display: 'block'}}>
                                             Categories
                                         </Button>
                                         <Menu
@@ -237,7 +239,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                         </Menu>
                                     </Box>
                                     {/* Contact Us Button */}
-                                    <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent' }} sx={{display: { xs: 'none', md: 'flex' }}}>
+                                    <Button style={{color: 'inherit', textDecoration: 'none', backgroundColor: 'transparent'}} sx={{display: { xs: 'none', md: 'flex' }}}>
                                         <Link to="/contact" style={{color: 'inherit', textDecoration: 'none' }}>
                                             Contact Us
                                         </Link>
@@ -262,7 +264,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                                     </Button>
                                         <Link to="/cart" style={{color: 'inherit', textDecoration: 'none' }}>
                                             <IconButton>
-                                                <Badge badgeContent={cartCount} color="primary" showZero data-testid="cart-count" >
+                                                <Badge badgeContent={cartCount} color="error" showZero data-testid="cart-count" >
                                                     <ShoppingCartIcon color='action' />
                                                 </Badge>
                                             </IconButton>
@@ -283,7 +285,7 @@ function NavBar({searchQuery, handleSearchQuery, setSearchSubmission}){
                             onChange = {handleSearchQuery}
                             value={searchQuery}
                             />
-                            <Button type='submit' variant="contained" >
+                            <Button type='submit' variant="outlined" sx={{border: '2px solid black', color:"black"}}>
                                 <SearchIcon />
                             </Button>
                         </Search>

@@ -12,7 +12,7 @@ const ProductCard = ({product}) => {
 
 
   return (
-    <Card sx={{boxShadow: 'none', border: '1px solid #ccc'}}>
+    <Card sx={{boxShadow:'black', border: '1px solid #ccc'}}>
       <LazyLoad height={500} offset={200} >
         <CardMedia
           sx={{ height: 500 }}
@@ -26,8 +26,8 @@ const ProductCard = ({product}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to={`/products/${product.id}`} style={{width:"100%", textDecoration:"none"}} >
-          <Button fullWidth={true} variant='outlined' color='success' size='small'>
+        <Link to={`/products/${product.id}`}  style={{width:"100%", textDecoration:"none"}} >
+          <Button fullWidth={true} variant='outlined' size='medium' sx={{backgroundColor: "#D1D1D1", color:"black", border: 'black solid 1px'}} color='error'>
           £{product.price.toFixed(2)} - Details
           </Button>
         </Link>

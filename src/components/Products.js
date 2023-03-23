@@ -4,7 +4,7 @@ import { Container } from '@mui/material'
 
 const Products = ({products}) => {
   return (
-    <Container  maxWidth={'lg'} sx={{my: 4}} >
+    <Container  maxWidth={'lg'} sx={{my: 4, flexGrow: 1}} >
        <Grid container spacing={3}>
         {products.map(product => (
             <Grid key={product.id} item xs={12} sm={6} md={6} lg={4}>

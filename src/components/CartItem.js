@@ -11,6 +11,7 @@ const CartItem = ({itemData, deleteCartItem}) => {
             <Typography variant="p" > {itemData.count} </Typography>
             <Button size="small"
                 variant="contained"
+                color="error"
                 component="button"
                 sx={{textTransform: "none"}}
                 onClick={() => deleteCartItem(itemData)}

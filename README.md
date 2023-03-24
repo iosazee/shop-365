@@ -55,7 +55,7 @@ The site is deployed at the following url https://shop-365.netlify.app/
 
 ## License
 
-* Source code is licensed under the ![MIT](https://img.shields.io/badge/License-MIT-yellow.svg).
+* Source code is licensed under the <br> ![MIT](https://img.shields.io/badge/License-MIT-yellow.svg).
 * Read the fine print of [MIT license](./license)
 
 ## Collaborators

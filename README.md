@@ -144,7 +144,7 @@ You can see more of our work on our github profiles [Alex](https://github.com/Al
 
 ## Acknowledgements
 
-* The Fakestore API, we started out we that, before building our own database
+* The Fakestore API, we started out with that, before building our own database
 * Material UI
 * Supabase JS
 * And ofcourse our onstructors and TAs, at the EDx/Trilogy Bootcamp.
